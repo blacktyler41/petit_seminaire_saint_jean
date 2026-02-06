@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Petit Seminaire Saint-Jean Nkumba</title>
+  <meta name="description" content="Petit Seminaire Saint-Jean" />
+  <link rel="icon" href="Assets/logoooo.png" />
+  <!-- Animate On Scroll (AOS) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Hover.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+<div class="gtranslate_wrapper"></div> 
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0369a1;
+      --muted: #6c757d;
+      --card-radius: .75rem;
+    }
+
+    /* Buttons & brand */
+    .bg-brand { background-color: var(--brand) !important; }
+    .text-brand { color: var(--brand) !important; }
+    .btn-brand { background-color: var(--brand); color: #fff; border: none; }
+    .btn-brand:hover { background-color: var(--brand-dark); color: #fff; }
+
+    /*
+/* Small natural hero with background image */
+.hero-small-bg {
+  background-image: url("Assets/gate_view.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 63vh;
+  padding: 3rem 0;
+
+  border-bottom: 1px solid;
+
+  /* Light natural overlay for readability */
+  position: relative;
+}
+
+.hero-small-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+}
+
+.hero-small-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-small-bg h1 {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  color: #fcfdfd; /* soft dark blue */
+}
+
+.hero-small-bg p {
+  max-width: 420px;
+  color: #fcfdfd; /* soft dark blue */
+}
+
+
+    /* Responsive typography */
+    h1.display-5 { font-size: clamp(1.6rem, 4.2vw, 2.6rem); line-height:1.05; }
+    .lead { font-size: clamp(.95rem, 1.8vw, 1.125rem); }
+
+    /* Cards */
+    .card-hover { transition: transform .18s ease, box-shadow .18s ease; border-radius: var(--card-radius); overflow: hidden; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 1rem 2rem rgba(0,0,0,.08); }
+
+    /* Images: consistent aspect ratio */
+    .ratio-4x3 { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; display:block; }
+    .avatar-lg { width:96px; height:96px; object-fit:cover; }
+
+    /* Gallery grid: responsive masonry-like */
+    .gallery-grid { display: grid; gap: .75rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 576px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 992px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    /* Footer */
+    footer .link-secondary { color: #bfc9d1; }
+    footer h5 { font-weight:600; }
+
+    /* Utility tweaks */
+    .small-muted { color: var(--muted); font-size:.95rem; }
+    .container-narrow { max-width: 1100px; margin: 0 auto; }
+
+    /* Improve focus outline for keyboard users */
+    .btn:focus, .nav-link:focus, .form-control:focus { box-shadow: 0 0 0 .2rem rgba(14,165,233,.18); outline: none; }
+
+    /* Offcanvas menu link spacing */
+    .offcanvas-body .nav-link { padding: .5rem 0; }
+
+     /* Loader container */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: clamp(30px, 8vw, 80px);   /* responsive size */
+      height: clamp(30px, 8vw, 80px);
+      border: clamp(3px, 0.8vw, 6px) solid #ccc;
+      border-top: clamp(3px, 0.8vw, 6px) solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hidden state */
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+ </style>
+</head>
+<!-- Loader --> <div id="loader"> <div class="spinner"></div> </div>
+<body class="text-secondary">
+
+  <!-- Navbar with Offcanvas for mobile -->
+  <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="Assets/logoooo.png" alt="School logo" class="" style="height:50px;width:50px;object-fit:fill;">
+      </a>
+
+      <!-- Offcanvas toggler (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Desktop nav -->
+      <div class="collapse navbar-collapse" id="desktopNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
+          <li class="nav-item"><a class="nav-link" href="#about-us">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas mobile menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="nav flex-column">
+        <a class="nav-link" href="#about-us" data-dismiss="offcanvas">About</a>
+        <a class="nav-link" href="#events" data-dismiss="offcanvas">Announcements</a>
+        <a class="nav-link" href="#academics" data-dismiss="offcanvas">Academics</a>
+        <a class="nav-link" href="#location" data-dismiss="offcanvas">Location</a>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <hr>
+      </nav>
+    </div>
+  </div>
+
+ <!--Hero Section--> 
+<header class="hero-small-bg d-flex align-items-center">
+  <div class="container" data-aos="fade-up">
+    <h1 class="fw-bold mb-2">Welcome to Petit Séminaire Saint-Jean NKumba</h1>
+    <p class="small-muted mb-3">
+      A peaceful environment where students learn, grow, and thrive.
+    </p>
+    <a href="#about-us" class="btn btn-brand px-4 py-2">Learn More</a>
+  </div>
+</header>
+
+ 
+  
+  
+<!-- About Us Text -->
+  <section id="about-us" class="bg-light py-5">
+  <div class="container container-narrow">
+
+    <div class="text-center mb-4">
+      <h2 class="h3 fw-bold" data-aos="fade-up">About Us</h2>
+      <p class="small-muted" data-aos="fade-up">Who we are and what we stand for</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      
+      
+      <div class="col-lg-7" data-aos="fade-right">
+        <p class="small-muted">
+          Our school is a centre of academic excellence and character formation. 
+          We are committed to nurturing students who think critically, act responsibly,
+          and contribute meaningfully to society. 
+        </p>
+        <p class="small-muted">
+          With dedicated teachers, modern facilities, and a peaceful learning environment, 
+          we prepare learners to excel in national exams and develop lifelong values.
+        </p>
+      </div>
+
+      <!-- About Us Image -->
+      <div class="col-lg-5" data-aos="fade-left">
+        <img 
+          src="Assets/ecce_mater.JPG"
+          class="img-fluid rounded-3 shadow-sm"
+          alt="School environment">
+      </div>
+    </div>
+
+    <!-- Patron Saint Section -->
+    <div class="row g-4 mt-5 align-items-center">
+      <h3 class="fw-semibold">Our Patron Saint</h3>
+      <div class="col-lg-5" data-aos="zoom-in">
+        <img
+          src="Assets/saint_john.jpeg"
+          class="img-fluid rounded-3 shadow-sm"
+          alt="Saint John">
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        
+        <p class="small-muted">
+          Saint John, is a symbol of courage, purity,and unwavering faith.
+          He inspires our students to grow in integrity, compassion, and 
+          resilience.
+        </p>
+        <p class="small-muted">
+          His life teaches us that greatness  by the strength of 
+          character and the courage to stand for what is right.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Academics -->
+  <section id="academics" class="py-5" data-aos="zoom-in">
+    <div class="container container-narrow">
+      <div class="d-flex justify-content-between align-items-end">
+        <h2 class="h3 fw-bold">Academics</h2>
+      </div>
+
+      <div class="row g-4 mt-3">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/idem_destino.jpg" alt="O level" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">O level</h5>
+              <p class="card-text small-muted">Courses like Mathematics, Physics, Religion and others to pave the way towards greatness</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/carnegie (1).JPG" alt="A level" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">A level</h5>
+              <p class="card-text small-muted">Undertake  Mathematics, Physics, Chemistry and Biology to deepen our knowledge</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/hildebrande.png" alt="Arts" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Arts</h5>
+              <p class="card-text small-muted">Music programs that foster creativity and expression through marvelous songs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events & Announcements (static) -->
+  <section id="events" class="bg-light py-5" >
+    <div class="container container-narrow" data-aos="fade-left">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="h5 fw-bold">Announcements</h2>
+          <div class="mt-3 d-grid gap-3">
+            <div class="bg-white rounded-3 p-4 shadow-sm">
+              <h5 class="mb-1">Pocket money guidelines</h5>
+              <p class="small-muted mb-0">Parents are advised to deposit pocket money through the discipline's office on the mobile money number 0799345086 or code 1810290 registered on the name Jean Olivier Hakizimana.</p>
+            </div>
+            <div class="bg-white rounded-3 p-4 shadow-sm">
+              <h5 class="mb-1">The term's schedule</h5>
+              <p class="small-muted mb-0">Students should review the posted timetable  on the notice board.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <h2 class="h5 fw-bold">Upcoming events</h2>
+          <div class="mt-3 d-grid gap-3">
+            <div class="bg-white rounded-3 p-3 shadow-sm d-flex gap-3 align-items-center">
+              <div>
+                <h6 class="mb-1">S5 Retreat</h6>
+                <p class="small-muted mb-0">Students of S5 will have a retreat in the coming days.</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3 p-3 shadow-sm d-flex gap-3 align-items-center">
+              <div>
+                <h6 class="mb-1">S6 Retreat</h6>
+                <p class="small-muted mb-0">Students of S6 will have a retreat in the coming days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- Map -->
+  <section class="bg-light py-5" id="location">
+    <div class="container container-narrow">
+      <h2 class="h3 fw-bold">Find us</h2>
+      <div class="mt-3 rounded-3 overflow-hidden" style="height:320px;">
+        <iframe
+          title="School location"
+          class="w-100 h-100 border-0"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15978.XXXXXXX!2d29.7204828!3d-1.472007!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc5cc1cb3fb24d%3A0x2183070f6006e095!2sSt+John+Minor+Seminary+Nkumba!5e0!3m2!1sen!2srw!"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="false"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light">
+    <div class="container container-narrow py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="text-white">Petit Seminaire Saint-Jean Nkumba</h5>
+          <p class="small-muted mb-2">Educating with purpose since 1988. Burera, Rwanda.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="link-light text-decoration-none">Facebook</a>
+            <a href="#" class="link-light text-decoration-none">Twitter</a>
+            <a href="#" class="link-light text-decoration-none">Instagram</a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <h5 class="text-white">Academics</h5>
+          <ul class="list-unstyled small mt-2">
+            <li><a href="#" class="link-secondary text-decoration-none">O level</a></li>
+            <li><a href="#" class="link-secondary text-decoration-none">A level</a></li>
+            <li><a href="#" class="link-secondary text-decoration-none">Arts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="text-white">Admissions</h5>
+          <ul class="list-unstyled small mt-2">
+            <li><a href="#" class="link-secondary text-decoration-none">Parish</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="text-white">Contact</h5>
+          <ul class="list-unstyled small mt-2">
+            <li>Rectorat</li>
+            <li>+250 788 823 161</li>
+            <li>Burera, Rwanda</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-top border-secondary"></div>
+  </footer>
+
+  <!-- Bootstrap JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,          // animate only once
+    duration: 800,       // animation duration in ms
+    offset: 120          // trigger offset
+  });
+</script>
+
+  <!-- Optional: small enhancement to keep offcanvas accessible on resize -->
+  <script>
+    (function(){
+      const offcanvasEl = document.getElementById('mobileMenu');
+      const bsOffcanvas = offcanvasEl ? bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl) : null;
+      function closeOffcanvasOnLarge() {
+        if (!bsOffcanvas) return;
+        if (window.innerWidth >= 768) {
+          bsOffcanvas.hide();
+        }
+      }
+      window.addEventListener('resize', closeOffcanvasOnLarge);
+    })();
+  </script>
+<!--Translator-->
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","fr","de","it","es","hi","ar","zh-CN","ru","af","sw","ur","am","xh"],"wrapper_selector":".gtranslate_wrapper","flag_size":16,"switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flag_style":"3d","alt_flags":{"en":"usa"},"switcher_text_color":"#f7f7f7","switcher_arrow_color":"#f2f2f2","switcher_border_color":"#161616","switcher_background_color":"#303030","switcher_background_shadow_color":"#474747","switcher_background_hover_color":"#3a3a3a","dropdown_text_color":"#eaeaea","dropdown_hover_color":"#748393","dropdown_background_color":"#0d0101"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<!--loader-->
+<script> // Hide loader once page is fully loaded 
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    const loader = document.getElementById("loader");
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+  }, 1000);
+});
+
+</script>
+</body>
+</html>
