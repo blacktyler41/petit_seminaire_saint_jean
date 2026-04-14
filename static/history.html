@@ -40,7 +40,7 @@
     .hero-history {
         position: relative;
         min-height: 60vh;
-        background-image: url("Assets/gate_view.JPG");
+        background-image: url("Assets/overview.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -121,6 +121,31 @@
         color: var(--brand-dark);
         margin-bottom: 0.5rem;
     }
+    .history-item-collapse {
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+        transition: max-height .35s ease;
+    }
+    .history-item-collapse::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3.5rem;
+        background: linear-gradient(transparent, #f8f9fa);
+        pointer-events: none;
+    }
+    .history-item-collapse.expanded {
+        max-height: 9999px;
+    }
+    .history-item-collapse.expanded::after {
+        display: none;
+    }
+    .history-item-toggle-btn {
+        margin-top: 1rem;
+    }
      /* Footer */
 footer {
   background: radial-gradient(circle at top left, #0d47a1, #08306b);
@@ -132,31 +157,31 @@ footer a:hover { color: #fff; }
 </head>
 <body>
      <!-- Navbar with Offcanvas for mobile -->
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top shadow-sm">
-    <div class="container d-flex">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="Assets/logoooo.png" alt="School logo" class="" style="height:50px;width:50px;object-fit:fill;">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top shadow-sm">
+        <div class="container d-flex">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="Assets/logoooo.png" alt="School logo" class="" style="height:50px;width:50px;object-fit:fill;">
+            </a>
 
-      </a>
+            <!-- Offcanvas toggler (mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <!-- Offcanvas toggler (mobile) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <!-- Desktop nav -->
+            <div class="collapse navbar-collapse" id="desktopNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                   <!----<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
+                   <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-LIBRARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-      <!-- Desktop nav -->
-      <div class="collapse navbar-collapse" id="desktopNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li>
-        <li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Offcanvas mobile menu -->
+    <!-- Offcanvas mobile menu -->
    
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
     <div class="offcanvas-header">
@@ -190,17 +215,18 @@ footer a:hover { color: #fff; }
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Foundation and history</h4>
-                    <p>Construction of the Seminary began in July 1987. It opened its 
-                      doors on September 5, 1988 with 72 students from the 1st and 2nd years 
-                       of the Latin-sciences option. From 1988 to 1994, the St Jean Minor Séminaire was directed by
-                        Mgr Simon Habyarimana, then Vicar General of the Diocese of Ruhengeri (with Father Vincent Barugahare as vice-rector for the 1993-1994 school year). 
-                        Because of the war and insecurity, the Seminary worked temporarily in Kabgayi at the 
-                        St Léon Minor Seminary in 1993, in Rwaza in 1994 and again at the St Léon Minor Seminary in Kabgayi 
-                        in 1994-1995/1995-1996. Since 1996 the seminary was directed by Father Michel Nsengumurenyi until 2001 
-                        (with Father Fabien Hagenimana as vice-rector for the 2000-2001 school year) who was replaced by Father Cassien 
-                        Mulindahabi until 2005. Currently, Father Jean-Bosco Baribeshya, as prefect of studies, 
-                        also carries out functions relating to the rectorate. The supreme leader of the Minor Seminary is 
-                        His Excellency Monsignor Kizito Bahujimihigo Bishop of the Diocese of Ruhengeri.</p>
+                    <div class="history-item-collapse">
+                        <p>Construction of the Seminary began in July 1987. It opened its 
+                          doors on September 5, 1988 with 72 students from the 1st and 2nd years 
+                           of the Latin-sciences option. From 1988 to 1994, the St Jean Minor Séminaire was directed by
+                            Mgr Simon Habyarimana, then Vicar General of the Diocese of Ruhengeri (with Father Vincent Barugahare as vice-rector for the 1993-1994 school year). 
+                            Because of the war and insecurity, the Seminary worked temporarily in Kabgayi at the 
+                            St Léon Minor Seminary in 1993, in Rwaza in 1994 and again at the St Léon Minor Seminary in Kabgayi 
+                            in 1994-1995/1995-1996. Since 1996 the seminary was directed by Father Michel Nsengumurenyi until 2001 
+                            (with Father Fabien Hagenimana as vice-rector for the 2000-2001 school year) who was replaced by Father Cassien 
+                            Mulindahabi until 2005. Currently, Father Jean-Bosco Baribeshya, as prefect of studies, 
+                            also carries out functions relating to the rectorate. The supreme leader of the Minor Seminary is 
+                            His Excellency Monsignor Kizito Bahujimihigo Bishop of the Diocese of Ruhengeri.</p>
                         <p>The other priests who made the priestly team of trainers at the seminary are: 
                           a) as prefect of studies: Father Nizeyumuremyi Patrice, Father Niyonsaba Isaïe, Father Etienne Lévi, Father Pierre Claver Habiyambere, 
                           Father Grégoire Hakizimana and Father Jean Bosco Baribeshya ;
@@ -210,49 +236,57 @@ footer a:hover { color: #fff; }
                            c) as spiritual father: Abbot Pierre Ntakarakorwa (Senior), Abbot Placide Duhirimana, 
                            Abbot Fabien Hagenimana and André Nzitabakuze; the others are Fathers Jean Baptiste Sano and Grégoire Bareke.
                             Abbot Déogratias Niyibizi and Joseph Kasasa taught at St Jean Seminary as visiting professors</p>
-        </div> 
-                
+                    </div>
+                    <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
+                </div>
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
                     <h4>Growth and Development</h4>
-                    <p>Over the years, the seminary has grown from a small institution to a renowned educational center, expanding its facilities and curriculum to meet 
-                      the needs of modern education.
-                      <p> The seminary has consistently ranked among the top performing schools in its region and nationally.
-                       the semianary offers a robust O-lever fondation and specialised A-lever combinations, 
-                       specially stream I (Mathematics, Chemistry, Physics, and Biology)</p>
-                      <p>infrastractures and modernization, since its fondation it showed develoupment in school properties
-                    for example: different  playgrounds, laboratories for sciences and computers  
-                  our seminary also has grown in lever of music as it is regarded as the fontain of music in our community
-                now it has about 2 musics hall with differnt instruments. More impotantly our seminary has very beautiful chapel
-              which is the heart of our seminary where seminarians praise lord exccedingly.</p>
-              </p>
-          </div>
+                    <div class="history-item-collapse">
+                        <p>Over the years, the seminary has grown from a small institution to a renowned educational center, expanding its facilities and curriculum to meet 
+                          the needs of modern education.</p>
+                        <p>The seminary has consistently ranked among the top performing schools in its region and nationally.
+                           The seminary offers a robust O-level foundation and specialised A-level combinations, 
+                           especially stream I (Mathematics, Chemistry, Physics, and Biology).</p>
+                        <p>Infrastructure and modernization, since its foundation it showed development in school properties
+                        for example: different playgrounds, laboratories for sciences and computers. 
+                        Our seminary also has grown in level of music as it is regarded as the fountain of music in our community.
+                        Now it has about 2 music halls with different instruments. More importantly our seminary has a very beautiful chapel
+                        which is the heart of our seminary where seminarians praise the Lord exceedingly.</p>
+                    </div>
+                    <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
+                </div>
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
                     <h4>Commitment to Excellence</h4>
-                    <p>The seminary continues to uphold its tradition of excellence, fostering holistic development in seminarians through academic rigor, spiritual guidance, and extracurricular activities.
-                      as in national examinations and many other competences comes in school with bst grades and best performance. 
-                      this is achieved through a dedicated staff, a supportive community, and a curriculum that balances intellectual growth with moral and spiritual formation.
-                    </p>
+                    <div class="history-item-collapse">
+                        <p>The seminary continues to uphold its tradition of excellence, fostering holistic development in seminarians through academic rigor, spiritual guidance, and extracurricular activities.
+                          as in national examinations and many other competences comes in school with best grades and best performance. 
+                          this is achieved through a dedicated staff, a supportive community, and a curriculum that balances intellectual growth with moral and spiritual formation.
+                        </p>
+                    </div>
+                    <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
                 </div>
                 <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
                     <h4>Present Day</h4>
-                    <p>Today, Petit Seminaire Saint-Jean Nkumba stands as a beacon of learning, 
-                      preparing seminarians to become responsible citizens and leaders in society.
-                    To date, the number of students who have studied at the Petit Séminaire St Jean 
-                    and/or who are still studying there is estimated at 700 students. Among them, 
-                    20 were able to reach the priesthood, the others are still in training or are involved 
-                    elsewhere in secular life (there are also some who have died).</p>
+                    <div class="history-item-collapse">
+                        <p>Today, Petit Seminaire Saint-Jean Nkumba stands as a beacon of learning, 
+                          preparing seminarians to become responsible citizens and leaders in society.
+                        To date, the number of students who have studied at the Petit Séminaire St Jean 
+                        and/or who are still studying there is estimated at 700 students. Among them, 
+                        20 were able to reach the priesthood, the others are still in training or are involved 
+                        elsewhere in secular life (there are also some who have died).</p>
+                    </div>
+                    <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer -->
-  <!-- Footer -->
 <footer class="bg-dark text-light pt-5 position-relative">
   <div class="container container-narrow">
     <div class="row g-4">
       <!-- About -->
       <div class="col-md-4">
-        <h5 class="text-white fw-bold">Petit Séminaire Saint‑Jean Nkumba</h5>
+<h5 class="text-white fw-bold"><a href="index.html">Petit Séminaire Saint‑Jean Nkumba</a></h5>
         <p class="text-white small">Educating with purpose since 1988. Burera, Rwanda.</p>
         <div class="d-flex gap-3 mt-2">
           <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
@@ -307,6 +341,16 @@ footer a:hover { color: #fff; }
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.history-item-toggle-btn').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const itemCollapse = this.previousElementSibling;
+                    if (!itemCollapse) return;
+                    itemCollapse.classList.toggle('expanded');
+                    this.textContent = itemCollapse.classList.contains('expanded') ? 'Read less' : 'Read more';
+                });
+            });
+        });
     </script>
     <!-- GTranslate Script -->
     <script>
