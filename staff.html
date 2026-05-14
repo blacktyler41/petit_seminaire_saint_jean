@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAFF - Petit Seminaire Saint-Jean Nkumba</title>
+    <meta name="description" content="Meet our dedicated staff at Petit Seminaire Saint-Jean Nkumba" />
+    <link rel="icon" href="Assets/logoooo.png" />
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Hover.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <div class="gtranslate_wrapper"></div> 
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+    <style>
+        :root {
+            --brand: #0ea5e9;
+            --brand-dark: #0369a1;
+            --muted: #6c757d;
+            --card-radius: .75rem;
+        }
+
+        /* Improve focus outline for keyboard users */
+        .btn:focus, .nav-link:focus, .form-control:focus { box-shadow: 0 0 0 .2rem rgba(14,165,233,.18); outline: none; }
+
+        /* Offcanvas menu link spacing */
+        .offcanvas-body .nav-link { padding: .5rem 0; }
+
+        /* make navbar itself full width gradient */
+        .navbar {
+            background: conic-gradient(from 120deg, var(--brand),white, var(--brand-dark));
+        }
+
+        /* Hero section */
+ .hero-staff {
+    background-image: url('Assets/gate_view.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+       .hero-staff::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 14, 14, 0.5);
+        z-index: 0;
+    }      
+        .hero-staff h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color:white;
+        }
+        .hero-staff p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            max-width: 600px;
+            margin: 0 auto;
+            color:white;
+        }
+ 
+
+        /* Staff section */
+        .staff-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        .staff-section h2 {
+            color: var(--brand-dark);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .staff-card {
+            background: linear-gradient(90deg rgb(22, 22, 167),rgb(251, 246, 246), rgb(22, 22, 167));
+            border-radius: var(--card-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .staff-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .staff-card .card-body {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(to right, var(--brand-dark), white, var(--brand-dark));
+        }
+        .staff-card h5 {
+            color: var(--brand-dark);
+            margin-bottom: 0.5rem;
+        }
+        .staff-card p {
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+        }
+        .staff-card .role {
+            font-weight: bold;
+            color: var(--brand);
+        }
+        span a {
+  color: grey;             /* Makes the link grey */
+  text-decoration: none;   /* Removes underline */
+  font-family: Arial, sans-serif;
+}
+span a:hover {
+  color: #555;             /* Slightly darker grey on hover */
+  text-decoration: underline; /* Optional: underline only on hover */
+}
+
+        
+        /* Footer */
+footer {
+  background: radial-gradient(circle at top left, #0d47a1, #08306b);
+  color: #f8f9fa; padding: 2.5rem 0;
+}
+footer a { color: #d1d8e0; text-decoration: none; }
+footer a:hover { color: #fff; }
+ html, body {
+  overflow-x: hidden;
+}       
+
+    </style>
+</head>
+<body>
+    <!-- Navbar with Offcanvas for mobile -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top shadow-sm">
+        <div class="container d-flex">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="Assets/logoooo.png" alt="School logo" class="" style="height:50px;width:50px;object-fit:fill;">
+            </a>
+
+            <!-- Offcanvas toggler (mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop nav -->
+            <div class="collapse navbar-collapse" id="desktopNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                   <!----<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
+                   <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas mobile menu -->
+   
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="d-flex-column">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-dismiss="offcanvas">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html" data-dismiss="offcanvas">GALLERY</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html" data-dismiss="offcanvas">HISTORY</a></li>
+        <!--<li class="nav-item"><a class="nav-link" href="schedule.html" data-dismiss="offcanvas">SCHEDULE</a></li>-->
+        <li class="nav-item"><a class="nav-link" href="#" data-dismiss="offcanvas">E-LIBRARY</a></li>
+
+        </ul>
+              </nav>
+      </div>
+    </div>
+
+    <header class="hero-staff">
+        <div class="container  ">
+            <h1 data-aos="fade-up">Our Staff</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Meet the dedicated professionals who guide and inspire our students</p>
+        </div>
+    </header>
+
+<section class="staff-section">
+<div class="container">
+<h2 data-aos="fade-up">Our Leaders</h2>
+<div class="row">
+
+<!-- Rectorat -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/IMG_0906.JPG" alt="Father Dieudonne MANIRAGUHA">
+<div class="card-body">
+<p class="role">Rector</p>
+<h5>Father Dieudonne MANIRAGUHA</h5>
+<h6>Contact</h6>
+<span>Telephone: +250 788 823 161</span><br>
+<!--<span><a href="#">Email: #</a></span>--->
+</div>
+</div>
+</div>
+
+<!-- Dean of Studies -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/dos.png" alt="Father Alphonse TURATSINZE">
+<div class="card-body">
+<p class="role">Dean of Studies</p>
+<h5>Father Alphonse TURATSINZE</h5>
+<h6>Contact</h6>
+<span>Telephone: +250788635365</span><br>
+<!--<span><a href="#">Email: </a></span>-->
+</div>
+</div>
+</div>
+
+<!-- Econome -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/econone.png" alt="Father Janvier SIBORUREMA">
+<div class="card-body">
+<p class="role">Econome</p>
+<h5>Father Janvier SIBORUREMA</h5>
+<h6>Contact</h6>
+<span>Telephone: +250785828699</span><br>
+<!--<span><a href="#">Email: #</a></span>-->
+</div>
+</div>
+</div>
+
+<!-- Spiritual Father -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/nkindi.jpg" alt="Father Theoneste MUNYANKINDI">
+<div class="card-body">
+<p class="role">Spiritual Father</p>
+<h5>Father Theoneste MUNYANKINDI</h5>
+<h6>Contact</h6>
+<span>Telephone: +250788305430</span><br>
+<!--<span><a href="#">Email: #</a></span>-->
+</div>
+</div>
+</div>
+
+<!-- Dean of Discipline -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/dos (1).jpg" alt="Fratri Vicent TWAMBAZIMANA">
+<div class="card-body">
+<p class="role">Dean of Discipline</p>
+<h5>Fratri Vicent TWAMBAZIMANA</h5>
+<h6>Contact</h6>
+<span>Telephone: +250782793234</span><br>
+<!--<span><a href="#">Email: #</a></span>--->
+</div>
+</div>
+</div>
+
+<!-- Animateur -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up">
+<div class="staff-card">
+<img src="Assets/DSC_1363~2.jpg" alt="IRAKOZE Fabrice">
+<div class="card-body">
+<p class="role">Animateur</p>
+<h5>IRAKOZE Fabrice</h5>
+<h6>Contact</h6>
+<span>Telephone:+250790302248</span><br>
+<!--<span><a href="#">#</a></span>-->
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-light pt-5 position-relative">
+  <div class="container container-narrow">
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-4">
+        <h5 class="text-white fw-bold"><a href="index.html">Petit Séminaire Saint‑Jean Nkumba</a></h5>
+        <p class="text-white small">Educating with purpose since 1988. Burera, Rwanda.</p>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.instagram.com/petit_seminaire_de_nkumba?utm_source=ig_web_button_share_sheet&igsh=M2M0Y2JmOTAyOA==" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Academics Links -->
+      <div class="col-md-2">
+        <h5 class="text-white fw-bold">Academics</h5>
+        <ul class="list-unstyled mt-2 small">
+          <li><a href="#academics" class="text-white text-decoration-none">O Level</a></li>
+          <li><a href="#academics" class="text-white text-decoration-none">A Level</a></li>
+          <li><a href="#academics" class="text-white text-decoration-none">Arts & Music</a></li>
+        </ul>
+      </div>
+
+      <!-- Admissions Links -->
+      <div class="col-md-3">
+        <h5 class="text-white fw-bold">Admissions</h5>
+        <ul class="list-unstyled mt-2 small">
+          <li><a href="#" class="text-white text-decoration-none">PARISH</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h5 class="text-white fw-bold">Contact</h5>
+        <ul class="list-unstyled mt-2 small text-white">
+          <li>Rectorat Office</li>
+          <li>+250 788 823 161</li>
+          <li>Burera, Rwanda</li>
+          <li><a href="mailto:psnkumbaped@yahoo.com" class="text-white text-decoration-none">psnkumbaped@yahoo.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-light my-4">
+
+    <div class="text-center small text-white pb-3">
+      &copy; 2026 Petit Séminaire Saint‑Jean Nkumba. All rights reserved.
+    </div>
+
+
+  </div>
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- GTranslate Script -->
+    <script>
+window.gtranslateSettings = {
+  default_language: "en",
+  detect_browser_language: true,
+  languages: ["en", "fr", "sw", "la", "es", "de"], 
+  // en = English, fr = French, sw = Swahili, la = Latin, es = Spanish, de = German
+  wrapper_selector: ".gtranslate_wrapper",
+  switcher_horizontal_position: "right",
+  switcher_vertical_position: "bottom",
+  float_switcher_open_direction: "top",
+  flag_style: "3d"
+};
+</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+</html>
