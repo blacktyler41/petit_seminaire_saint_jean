@@ -419,11 +419,63 @@ footer a:hover { color: #fff; }
     /* Offcanvas menu link spacing */
     .offcanvas-body .nav-link { padding: .5rem 0; }
 
-  
+     /* Loader container */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
 
+    /* Spinner */
+    .spinner {
+      width: clamp(30px, 8vw, 80px);   /* responsive size */
+      height: clamp(30px, 8vw, 80px);
+      border: clamp(3px, 0.8vw, 6px) solid #ccc;
+      border-top: clamp(3px, 0.8vw, 6px) solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hidden state */
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    html, body {
+  overflow-x: hidden;
+}
+
+/* Fix GTranslate on mobile */
+.gtranslate_wrapper {
+  position: fixed !important;
+  bottom: 80px !important;
+  right: 15px !important;
+  z-index: 99999 !important;
+}
+
+@media (max-width: 768px) {
+  .gtranslate_wrapper {
+    transform: scale(0.9);
+    bottom: 70px !important;
+    right: 10px !important;
+  }
+}
  </style>
 </head>
-
+<!-- Loader --> <div id="loader"> <div class="spinner"></div> </div>
+<body class="text-secondary">
 
   <!-- Navbar with Offcanvas for mobile -->
 <nav class="navbar navbar-expand-md navbar-light sticky-top shadow-sm">
