@@ -153,7 +153,11 @@ footer {
 }
 footer a { color: #d1d8e0; text-decoration: none; }
 footer a:hover { color: #fff; }
-    </style>
+html, body {
+  overflow-x: hidden;
+}
+
+</style>
 </head>
 <body>
      <!-- Navbar with Offcanvas for mobile -->
@@ -173,7 +177,7 @@ footer a:hover { color: #fff; }
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                    <!----<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
-                   <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-LIBRARY</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
                     <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
                 </ul>
@@ -195,7 +199,7 @@ footer a:hover { color: #fff; }
         <li class="nav-item"><a class="nav-link" href="gallery.html" data-dismiss="offcanvas">GALLERY</a></li>
         <li class="nav-item"><a class="nav-link" href="staff.html" data-dismiss="offcanvas">STAFF</a></li>
         <!--<li class="nav-item"><a class="nav-link" href="schedule.html" data-dismiss="offcanvas">SCHEDULE</a></li>-->
-        <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com" data-dismiss="offcanvas">E-LIBRARY</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-dismiss="offcanvas">E-LIBRARY</a></li>
 
         </ul>
               </nav>
@@ -216,26 +220,33 @@ footer a:hover { color: #fff; }
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Foundation and history</h4>
                     <div class="history-item-collapse">
-                        <p>Construction of the Seminary began in July 1987. It opened its 
-                          doors on September 5, 1988 with 72 students from the 1st and 2nd years 
-                           of the Latin-sciences option. From 1988 to 1994, the St Jean Minor Séminaire was directed by
-                            Mgr Simon Habyarimana, then Vicar General of the Diocese of Ruhengeri (with Father Vincent Barugahare as vice-rector for the 1993-1994 school year). 
-                            Because of the war and insecurity, the Seminary worked temporarily in Kabgayi at the 
-                            St Léon Minor Seminary in 1993, in Rwaza in 1994 and again at the St Léon Minor Seminary in Kabgayi 
-                            in 1994-1995/1995-1996. Since 1996 the seminary was directed by Father Michel Nsengumurenyi until 2001 
-                            (with Father Fabien Hagenimana as vice-rector for the 2000-2001 school year) who was replaced by Father Cassien 
-                            Mulindahabi until 2005. Currently, Father Jean-Bosco Baribeshya, as prefect of studies, 
-                            also carries out functions relating to the rectorate. The supreme leader of the Minor Seminary is 
-                            His Excellency Monsignor Kizito Bahujimihigo Bishop of the Diocese of Ruhengeri.</p>
-                        <p>The other priests who made the priestly team of trainers at the seminary are: 
-                          a) as prefect of studies: Father Nizeyumuremyi Patrice, Father Niyonsaba Isaïe, Father Etienne Lévi, Father Pierre Claver Habiyambere, 
-                          Father Grégoire Hakizimana and Father Jean Bosco Baribeshya ;
-                           b) as treasurer: Father Diogene Bideri, Father Gabriel Kigozi, Father Pierre Claver Habiyambere, 
-                           Father Emmanuel Gasirabo, Father Léopold Zirarushya, Father Valens Niyitegeka, 
-                           Father André Ntungiyehe, Father Cassien Mulindahabi and Father Bonaventure Bwanakweri; 
-                           c) as spiritual father: Abbot Pierre Ntakarakorwa (Senior), Abbot Placide Duhirimana, 
-                           Abbot Fabien Hagenimana and André Nzitabakuze; the others are Fathers Jean Baptiste Sano and Grégoire Bareke.
-                            Abbot Déogratias Niyibizi and Joseph Kasasa taught at St Jean Seminary as visiting professors</p>
+                        <p>Construction of the Seminary began in July 1987.
+                             It opened its doors on September 5, 1988, with 72 students in the 1st and 2nd years
+                              of the Latin-sciences option. From 1988 to 1994, the St Jean Minor Seminary was directed by 
+                              Mgr Simon Habyarimana, then Vicar General of the Diocese of Ruhengeri, with Father Vincent
+                               Barugahare serving as vice-rector during the 1993–1994 school year.
+
+                            Because of the war and insecurity, the Seminary temporarily operated at St Léon Minor Seminary 
+                            in Kabgayi in 1993, in Rwaza in 1994, and again at St Léon Minor Seminary in Kabgayi during
+                             the 1994–1995 and 1995–1996 school years.
+
+                            From 1996 to 2001, the Seminary was directed by Father Michel Nsengumurenyi, 
+                            with Father Fabien Hagenimana serving as vice-rector during the 2000–2001 school year. He was succeeded by Father Cassien Mulindahabi, who served until 2005. Currently, Father Jean-Bosco Baribeshya, as Prefect of Studies, also carries out duties related to the rectorate. The supreme leader of the Minor Seminary is 
+                           His Excellency Monsignor Kizito Bahujimihigo, Bishop of the Diocese of Ruhengeri.</p>
+                        <p>The other priests who formed the priestly training team at the Seminary are:
+
+                        a) As Prefects of Studies: Father Nizeyumuremyi Patrice, Father Niyonsaba Isaïe, Father Etienne Lévi, 
+                        Father Pierre Claver Habiyambere, Father Grégoire Hakizimana, and Father Jean-Bosco Baribeshya.
+
+                        b) As Treasurers: Father Diogene Bideri, Father Gabriel Kigozi, Father Pierre Claver Habiyambere, 
+                        Father Emmanuel Gasirabo, Father Léopold Zirarushya, Father Valens Niyitegeka, Father André Ntungiyehe, 
+                        Father Cassien Mulindahabi, and Father Bonaventure Bwanakweri.
+
+                        c) As Spiritual Fathers: Abbot Pierre Ntakarakorwa (Senior), Abbot Placide Duhirimana, Abbot Fabien Hagenimana, 
+                        and André Nzitabakuze.
+
+                         Other members included Fathers Jean Baptiste Sano and Grégoire Bareke. 
+                        Abbot Déogratias Niyibizi and Joseph Kasasa taught at St Jean Seminary as visiting professors.</p>
                     </div>
                     <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
                 </div>
@@ -259,8 +270,8 @@ footer a:hover { color: #fff; }
                     <h4>Commitment to Excellence</h4>
                     <div class="history-item-collapse">
                         <p>The seminary continues to uphold its tradition of excellence, fostering holistic development in seminarians through academic rigor, spiritual guidance, and extracurricular activities.
-                          as in national examinations and many other competences comes in school with best grades and best performance. 
-                          this is achieved through a dedicated staff, a supportive community, and a curriculum that balances intellectual growth with moral and spiritual formation.
+                          As in national examinations and many other competences comes in school with best grades and best performance. 
+                          This is achieved through a dedicated staff, a supportive community, and a curriculum that balances intellectual growth with moral and spiritual formation.
                         </p>
                     </div>
                     <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>
@@ -271,8 +282,8 @@ footer a:hover { color: #fff; }
                         <p>Today, Petit Seminaire Saint-Jean Nkumba stands as a beacon of learning, 
                           preparing seminarians to become responsible citizens and leaders in society.
                         To date, the number of students who have studied at the Petit Séminaire St Jean 
-                        and/or who are still studying there is estimated at 700 students. Among them, 
-                        20 were able to reach the priesthood, the others are still in training or are involved 
+                        Nkumba is estimated at 2320 students. Among them, 
+                        84 were able to reach the priesthood, the others are still in training or are involved 
                         elsewhere in secular life (there are also some who have died).</p>
                     </div>
                     <button class="btn btn-outline-primary history-item-toggle-btn" type="button">Read more</button>

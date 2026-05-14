@@ -66,6 +66,76 @@
   animation: shiftGradient 10s ease infinite;
 }
 
+.motto-bar {
+  background: var(--brand);
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 576px) {
+  .motto-bar {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+.navbar-nav .nav-link,
+.navbar-brand,
+.navbar-toggler {
+  color: #8ecef8 ;
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--brand-dark) !important;
+  transform: scale(1.05);
+}
+
+.dropdown-toggle::after {
+  margin-left: .35rem;
+  transition: transform .25s ease;
+}
+
+@media (min-width: 768px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: .35rem;
+  }
+
+  .nav-item.dropdown:hover > .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown-menu {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  background: var(--brand-dark);
+  min-width: 220px;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: .75rem 1rem;
+  transition: background .2s ease, color .2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
 @keyframes shiftGradient {
   0%   { background-position: 0% 0%; }
   50%  { background-position: 100% 100%; }
@@ -199,7 +269,7 @@
 }
 
 .section-bg { 
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1e40af, #2563eb);
+  background: linear-gradient(135deg, #1e3a8a, #1e3a8a, #2563eb, #2563eb);
   background-size: 400% 400%;
   border-radius: 15px;
   padding: 20px;
@@ -383,7 +453,25 @@ footer a:hover { color: #fff; }
       opacity: 0;
       pointer-events: none;
     }
+    html, body {
+  overflow-x: hidden;
+}
 
+/* Fix GTranslate on mobile */
+.gtranslate_wrapper {
+  position: fixed !important;
+  bottom: 80px !important;
+  right: 15px !important;
+  z-index: 99999 !important;
+}
+
+@media (max-width: 768px) {
+  .gtranslate_wrapper {
+    transform: scale(0.9);
+    bottom: 70px !important;
+    right: 10px !important;
+  }
+}
  </style>
 </head>
 <!-- Loader --> <div id="loader"> <div class="spinner"></div> </div>
@@ -406,9 +494,9 @@ footer a:hover { color: #fff; }
       <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            OUR SERVICES</a>
-          <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            OUR SCHOOL</a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
             <li><a class="dropdown-item" href="#about-us">About</a></li>
             <li><a class="dropdown-item" href="#academics">Academics</a></li>
             <li><a class="dropdown-item" href="#events">Announcements</a></li>
@@ -417,7 +505,7 @@ footer a:hover { color: #fff; }
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-LIBRARY</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
 
         <li class="nav-item dropdown">
@@ -435,6 +523,7 @@ footer a:hover { color: #fff; }
     </div>
   </div>
 </nav>
+  <div class="motto-bar">Ecce Mater Tua</div>
   <!-- Offcanvas mobile menu -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
     <div class="offcanvas-header">
@@ -449,7 +538,7 @@ footer a:hover { color: #fff; }
         <a class="nav-link" href="#admissions" data-dismiss="offcanvas">Admissions</a>
         <a class="nav-link" href="#location" data-dismiss="offcanvas">Location</a>
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-Library</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">E-Library</a></li>
         <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
         <!-- <li class="nav-item"><a class="nav-link" href="schedule.html">schedule</a></li> -->
         <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
@@ -546,7 +635,7 @@ footer a:hover { color: #fff; }
 </section>
 
 <section id="board" class="py-5">
-  <div class="container-fluid stats-banner">
+  <div class="container-fluid statouns-banner">
     <div class="row text-center g-4">
       
       <div class="col-md-3">
@@ -568,7 +657,7 @@ footer a:hover { color: #fff; }
       <div class="col-md-3">
         <div class="feature-box p-4 rounded-3 shadow-sm bg-white h-100 d-flex flex-column align-items-center justify-content-center">
           <i class="bi bi-person-badge fs-1 text-warning mb-2"></i>
-          <h2 class="count" data-target="15">0</h2>
+          <h2 class="count" data-target="21">0</h2>
           <p class="mb-0 fw-semibold">Teachers</p>
         </div>
       </div>
@@ -598,7 +687,7 @@ footer a:hover { color: #fff; }
 
   <!-- VIDEO -->
   <video id="campusVideo" autoplay muted loop playsinline class="video-bg">
-    <source src="static.mp4" type="video/mp4">
+    <source src="Assets/Welcome to Petit Séminaire Saint-Jean Nkumba.mp4" type="video/mp4">
   </video>
 
   <!-- OVERLAY -->
@@ -669,43 +758,26 @@ footer a:hover { color: #fff; }
   <!-- Events & Announcements (static) -->
   <section id="events" class="bg-light py-5" >
     <div class="container container-narrow" data-aos="fade-left">
+      <div class="text-center mb-4">
+        <h2 class="h3 fw-bold">Announcements</h2>
+      </div>
       <div class="row g-4">
-        <div class="col-lg-6">
-          <h2 class="h5 fw-bold">Announcements</h2>
-          <div class="mt-3 d-grid gap-3">
-            <div class="bg-white text-primary rounded-3 p-4 shadow-sm">
-              <h5 class="mb-1">Pocket money guidelines</h5>
-              <p class="small-muted mb-0">Parents are advised to deposit pocket money through the discipline's office on the mobile money number 0799345086 or code 1810290 registered on the name Jean Olivier Hakizimana.</p>
-            </div>
-            <div class="bg-white text-primary rounded-3 p-4 shadow-sm">
-              <h5 class="mb-1">The term's schedule</h5>
-              <p class="small-muted mb-0">Students should review the posted timetable  on the notice board.</p>
-            </div>
+        <div class="col-md-4">
+          <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
+            <h5 class="mb-2">Pocket money guidelines</h5>
+            <p class="small-muted mb-0">Parents are advised to deposit pocket money through the discipline's office on the mobile money number 0799345086 or code 1810290 registered on the name Jean Olivier Hakizimana.</p>
           </div>
         </div>
-
-        <div class="col-lg-6" data-aos="fade-left">
-          <h2 class="h5 fw-bold">Upcoming events</h2>
-          <div class="mt-3 d-grid gap-3">
-            <div class="bg-white text-primary rounded-3 p-3 shadow-sm d-flex gap-3 align-items-center">
-              <div>
-                <h6 class="mb-1">S5 RETREAT</h6>
-                <p class="small-muted mb-0">Students of S5 will have a retreat in the coming days.</p>
-              </div>
-            </div>
-
-            <div class="bg-white text-primary rounded-3 p-3 shadow-sm d-flex gap-3 align-items-center">
-              <div>
-                <h6 class="mb-1">S6 RETREAT</h6>
-                <p class="small-muted mb-0">Students of S6 will have a retreat in the coming days.</p>
-              </div>
-            </div>
-            <div class="bg-white text-primary rounded-3 p-3 shadow-sm d-flex gap-3 align-items-center">
-             <div>
-                <h6 class="mb-1">SAINT JOHN FEAST OF SEMINARY</h6>
-                  <p class="small-muted mb-0">The feast of seminary is on 16 May 2026</p>
-              </div>
-            </div>
+        <div class="col-md-4">
+          <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
+            <h5 class="mb-2">The term's schedule</h5>
+            <p class="small-muted mb-0">Students should review the posted timetable on the notice board.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
+            <h5 class="mb-2">SAINT JOHN FEAST OF SEMINARY</h5>
+            <p class="small-muted mb-0">The feast of seminary is on 16 May 2026</p>
           </div>
         </div>
       </div>
@@ -789,6 +861,8 @@ footer a:hover { color: #fff; }
     </div>
   </section>
 
+  <!-- Values Bar -->
+  <div class="motto-bar">Santé-Science-Saintéte</div>
 
   <!-- Footer -->
 <footer class="bg-dark text-light pt-5 position-relative">

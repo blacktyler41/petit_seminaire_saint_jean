@@ -52,17 +52,26 @@
     text-align: center;
 }
 
-       
+       .hero-staff::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 14, 14, 0.5);
+        z-index: 0;
+    }      
         .hero-staff h1 {
             font-size: clamp(2rem, 5vw, 4rem);
             font-weight: bold;
             margin-bottom: 1rem;
+            color:white;
         }
         .hero-staff p {
             font-size: clamp(1rem, 2vw, 1.5rem);
             max-width: 600px;
             margin: 0 auto;
+            color:white;
         }
+ 
 
         /* Staff section */
         .staff-section {
@@ -89,12 +98,13 @@
         }
         .staff-card img {
             width: 100%;
-            height: 250px;
+            height: 350px;
             object-fit: cover;
         }
         .staff-card .card-body {
             padding: 1.5rem;
             text-align: center;
+            background: linear-gradient(to right, var(--brand-dark), white, var(--brand-dark));
         }
         .staff-card h5 {
             color: var(--brand-dark);
@@ -126,7 +136,9 @@ footer {
 }
 footer a { color: #d1d8e0; text-decoration: none; }
 footer a:hover { color: #fff; }
-        
+ html, body {
+  overflow-x: hidden;
+}       
 
     </style>
 </head>
@@ -148,7 +160,7 @@ footer a:hover { color: #fff; }
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                    <!----<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
-                   <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-LIBRARY</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
                     <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
                 </ul>
@@ -170,7 +182,7 @@ footer a:hover { color: #fff; }
         <li class="nav-item"><a class="nav-link" href="gallery.html" data-dismiss="offcanvas">GALLERY</a></li>
         <li class="nav-item"><a class="nav-link" href="history.html" data-dismiss="offcanvas">HISTORY</a></li>
         <!--<li class="nav-item"><a class="nav-link" href="schedule.html" data-dismiss="offcanvas">SCHEDULE</a></li>-->
-        <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com" data-dismiss="offcanvas">E-LIBRARY</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-dismiss="offcanvas">E-LIBRARY</a></li>
 
         </ul>
               </nav>
@@ -178,7 +190,7 @@ footer a:hover { color: #fff; }
     </div>
 
     <header class="hero-staff">
-        <div class="container text-black">
+        <div class="container  ">
             <h1 data-aos="fade-up">Our Staff</h1>
             <p data-aos="fade-up" data-aos-delay="200">Meet the dedicated professionals who guide and inspire our students</p>
         </div>
@@ -192,13 +204,13 @@ footer a:hover { color: #fff; }
 <!-- Rectorat -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="Father Dieudonne MANIRAGUHA">
+<img src="Assets/IMG_0906.JPG" alt="Father Dieudonne MANIRAGUHA">
 <div class="card-body">
-<p class="role">Rectorat</p>
+<p class="role">Rector</p>
 <h5>Father Dieudonne MANIRAGUHA</h5>
 <h6>Contact</h6>
 <span>Telephone: +250 788 823 161</span><br>
-<span><a href="#">Email: #</a></span>
+<!--<span><a href="#">Email: #</a></span>--->
 </div>
 </div>
 </div>
@@ -206,13 +218,13 @@ footer a:hover { color: #fff; }
 <!-- Dean of Studies -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="Father Alphonse TURATSINZE">
+<img src="Assets/dos.png" alt="Father Alphonse TURATSINZE">
 <div class="card-body">
 <p class="role">Dean of Studies</p>
 <h5>Father Alphonse TURATSINZE</h5>
 <h6>Contact</h6>
-<span>Telephone:</span><br>
-<span><a href="#">Email: </a></span>
+<span>Telephone: +250788635365</span><br>
+<!--<span><a href="#">Email: </a></span>-->
 </div>
 </div>
 </div>
@@ -220,13 +232,13 @@ footer a:hover { color: #fff; }
 <!-- Econome -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="Father Janvier SIBORUREMA">
+<img src="Assets/econone.png" alt="Father Janvier SIBORUREMA">
 <div class="card-body">
 <p class="role">Econome</p>
 <h5>Father Janvier SIBORUREMA</h5>
 <h6>Contact</h6>
-<span>Telephone:</span><br>
-<span><a href="#">Email: #</a></span>
+<span>Telephone: +250785828699</span><br>
+<!--<span><a href="#">Email: #</a></span>-->
 </div>
 </div>
 </div>
@@ -234,13 +246,13 @@ footer a:hover { color: #fff; }
 <!-- Spiritual Father -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="Father Theoneste MUNYANKINDI">
+<img src="Assets/N.png" alt="Father Theoneste MUNYANKINDI">
 <div class="card-body">
 <p class="role">Spiritual Father</p>
 <h5>Father Theoneste MUNYANKINDI</h5>
 <h6>Contact</h6>
-<span>Telephone:</span><br>
-<span><a href="#">Email: #</a></span>
+<span>Telephone: +250788305430</span><br>
+<!--<span><a href="#">Email: #</a></span>-->
 </div>
 </div>
 </div>
@@ -248,13 +260,13 @@ footer a:hover { color: #fff; }
 <!-- Dean of Discipline -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="Fratri Vicent TWAMBAZIMANA">
+<img src="Assets/dos (1).jpg" alt="Fratri Vicent TWAMBAZIMANA">
 <div class="card-body">
 <p class="role">Dean of Discipline</p>
 <h5>Fratri Vicent TWAMBAZIMANA</h5>
 <h6>Contact</h6>
-<span>Telephone:</span><br>
-<span><a href="#">Email: #</a></span>
+<span>Telephone: +250782793234</span><br>
+<!--<span><a href="#">Email: #</a></span>--->
 </div>
 </div>
 </div>
@@ -262,13 +274,13 @@ footer a:hover { color: #fff; }
 <!-- Animateur -->
 <div class="col-lg-4 col-md-6" data-aos="fade-up">
 <div class="staff-card">
-<img src="Assets/AVATAL.png" alt="KUBWIMANA Valentin">
+<img src="Assets/DSC_1363~2.jpg" alt="IRAKOZE Fabrice">
 <div class="card-body">
 <p class="role">Animateur</p>
-<h5>KUBWIMANA Valentin</h5>
+<h5>IRAKOZE Fabrice</h5>
 <h6>Contact</h6>
-<span>Telephone:</span><br>
-<span><a href="kubwimanashemavalentin@gmail.com">Email:kubwimanashemavalentin@gmail.com</a></span>
+<span>Telephone:+250790302248</span><br>
+<!--<span><a href="#">#</a></span>-->
 </div>
 </div>
 </div>
@@ -277,9 +289,9 @@ footer a:hover { color: #fff; }
 </div>
 </section>
 
-    
- <!-- Footer -->
-<<footer class="bg-dark text-light pt-5 position-relative">
+
+<!-- Footer -->
+<footer class="bg-dark text-light pt-5 position-relative">
   <div class="container container-narrow">
     <div class="row g-4">
       <!-- About -->

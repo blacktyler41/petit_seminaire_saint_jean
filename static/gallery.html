@@ -83,6 +83,153 @@ footer {
 footer a { color: #d1d8e0; text-decoration: none; }
 footer a:hover { color: #fff; }
 
+/* ================================
+   RESPONSIVE FIX (SAFE PATCH)
+   ================================ */
+
+/* Prevent horizontal scroll on all phones */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better container behavior on small screens */
+.container {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Gallery grid improvement for very small phones */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .thumb {
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small phones (very tight screens) */
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thumb {
+    height: 180px;
+  }
+}
+
+/* Navbar safety on small screens */
+.navbar .container {
+  flex-wrap: wrap;
+}
+
+/* Modal responsiveness fix */
+@media (max-width: 600px) {
+  .viewer img {
+    max-height: 45vh;
+  }
+
+  .caption {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 8px;
+  }
+}
+
+/* Prevent long footer text breaking layout */
+footer .row > div {
+  word-break: break-word;
+}
+/* Responsive fix for More Photos links */
+.more-photos {
+  padding: 16px 0;
+}
+
+.more-photos h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.more-photos ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.more-photos li {
+  flex: 1 1 auto;
+  min-width: 160px;
+}
+
+.more-photos .custom-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand);
+  text-decoration: none;
+  border: 2px solid var(--brand);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.08);
+}
+
+.more-photos .custom-link:hover,
+.more-photos .custom-link:focus {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand-dark);
+}
+
+@media (max-width: 768px) {
+  .more-photos ul {
+    gap: 10px;
+  }
+
+  .more-photos li {
+    min-width: 100%;
+  }
+
+  .more-photos .custom-link {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .more-photos h2 {
+    font-size: 1.3rem;
+  }
+
+  .more-photos .custom-link {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}
     </style>
 </head>
 <body>
@@ -105,7 +252,7 @@ footer a:hover { color: #fff; }
           <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li>
         <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://petit-seminaire-saint-jean-nkumba-e.onrender.com">E-LIBRARY</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
         <!--<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
           
         </ul>
@@ -135,12 +282,12 @@ footer a:hover { color: #fff; }
  
 
     <header>
-      <div class="brand">Our School</div>
+      <div class="brand"><h1> Our School Gallery</h1></div>
       
     </header>
 
     <main>
-      <h1>Gallery</h1>
+      
 
       <section class="grid" id="gallery" aria-label="Photo gallery">
         <!-- Replace src with other images -->
@@ -160,18 +307,18 @@ footer a:hover { color: #fff; }
         </a>
 
         <a class="card" href="#" data-index="2" data-caption="Entrance view">
-          <img class="thumb" loading="lazy" src="Assets/flag.jpg" alt="Students">
+          <img class="thumb" loading="lazy" src="Assets/gate_view.JPG" alt="Entrance">
           <div class="meta">Entrance</div>
         </a>
 
         <a class="card" href="#" data-index="2" data-caption="Main Hall">
-          <img class="thumb" loading="lazy" src="Assets/Salle.JPG" alt="Students">
-          <div class="meta">Main Hall</div>
+          <img class="thumb" loading="lazy" src="Assets/Chapel.JPG" alt="Chapel outside">
+          <div class="meta">Chapel outside</div>
         </a>
 
         <a class="card" href="#" data-index="2" data-caption="Chapel">
-          <img class="thumb" loading="lazy" src="Assets/Chapel.JPG" alt="Students">
-          <div class="meta">Chapel</div>
+          <img class="thumb" loading="lazy" src="Assets/chapel inside.jpg">
+          <div class="meta">Chape insidel</div>
         </a>
 
         <a class="card" href="#" data-index="0" data-caption="Beautiful view of our school grounds">
@@ -180,22 +327,22 @@ footer a:hover { color: #fff; }
         </a>
 
         <a class="card" href="#" data-index="1" data-caption="computer lab">
-          <img class="thumb" loading="lazy" src="Assets/hp.jpg" alt="Saint John">
-          <div class="meta">OUR COMPUTER LAB</div>
+          <img class="thumb" loading="lazy" src="Assets/hp.jpg" alt="computer lab">
+          <div class="meta">Our Computer Lab</div>
         </a>
 
         <a class="card" href="#" data-index="2" data-caption="computer lab ">
           <img class="thumb" loading="lazy" src="Assets/chrome.jpg" alt="computer lab">
-          <div class="meta">OUR COMPUTER LAB</div>
+          <div class="meta">Our Computer Lab</div>
         </a>
 
-        <a class="card" href="#" data-index="2" data-caption="DORMITORY">
-          <img class="thumb" loading="lazy" src="Assets/dormitory.png" alt="computer lab">
-          <div class="meta">DORMITORY</div>
+        <a class="card" href="#" data-index="2" data-caption="Dormitory">
+          <img class="thumb" loading="lazy" src="Assets/dormitory.png" alt="Dormitory">
+          <div class="meta">Dormitory</div>
         </a>
 
         <a class="card" href="#" data-index="2" data-caption="Main Hall">
-          <img class="thumb" loading="lazy" src="Assets/Salle.JPG" alt="Students">
+          <img class="thumb" loading="lazy" src="Assets/Salle.JPG" alt="Main Hall">
           <div class="meta">Main Hall</div>
         </a>
 
@@ -220,24 +367,13 @@ footer a:hover { color: #fff; }
   </div>
 <!-- More Photos / Albums -->
 <section class="more-photos mt-4">
-  <h2>More Photos & Albums</h2>
+  <h2>More Photos & Videos</h2>
   <ul>
     <!-- links for more Photos -->
-    <li><a href="#" target="_blank" style="color: #1E90FF;        /* blue color */
-    text-decoration: none; /* remove underline */
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 2px solid #1E90FF;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.custom-link:hover {
-    background-color: #1E90FF;
-    color: white;
-}">Photos of s3</a></li>
-    </ul>
-</section>
+    <li><a class="custom-link" href="https://youtu.be/UWHLRd3nJ3M?list=RDUWHLRd3nJ3M" target="_blank">Hymne du Petit Seminaire st Jean de Nkumba</a></li>
+  <li><a class="custom-link" href="https://mega.nz/folder/4vo2hYKa#J7IJmW_1BwyQMGks_lYCAg/file/Z74glAZJ" target="_blank">Recollection_at_Remera_Ruhondo</a></li>
+  </ul>
+</section> 
     <!-- Footer -->
 <footer class="bg-dark text-light pt-5 position-relative">
   <div class="container container-narrow">
