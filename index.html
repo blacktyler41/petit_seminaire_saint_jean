@@ -157,12 +157,13 @@
   inset: 0;
   background: rgba(25, 24, 24, 0.35);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-small-bg .container {
   position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 
 .hero-small-bg h1 {
@@ -174,15 +175,14 @@
   max-width: 420px;
   color: #fcfdfd; /* soft dark blue */
 }
-
-    /* hero slideshow */
-/* hero slideshow (IMPROVED) */
+   
+/* hero slideshow  */
 .hero-slideshow {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -202,13 +202,44 @@
   opacity: 1;
   transform: scale(1);
 }
-
-
 /* keep text above overlay */
 .hero-small-bg .container {
   position: relative;
   z-index: 2;
 }
+
+
+
+/* indicators */
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative
+   z-index: 10;
+}
+
+.indicator.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+    .indicator.active {
+      background: rgba(255,255,255,1);
+    }
+
 /* video card */
 .video-card {
   position: relative;
@@ -299,33 +330,7 @@
   position: relative;
   z-index: 1; /* ensures text is above the glow */
 }
-/* indicators */
-.indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 2;
-}
 
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: #fff;
-  transform: scale(1.2);
-}
-    .indicator.active {
-      background: rgba(255,255,255,1);
-    }
 
     /* blue button with white text */
     .btn-blue-white {
@@ -722,11 +727,7 @@ footer a:hover { color: #fff; }
             <p class="small-muted mb-0">Students should review the posted timetable on the notice board.</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
-            <h5 class="mb-2">SAINT JOHN FEAST OF SEMINARY</h5>
-            <p class="small-muted mb-0">The feast of seminary is on 16 May 2026</p>
-          </div>
+        
         </div>
       </div>
     </div>
