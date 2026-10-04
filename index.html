@@ -228,17 +228,18 @@
   background: rgba(255,255,255,0.5);
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative
-   z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .indicator.active {
   background: #fff;
   transform: scale(1.2);
 }
-    .indicator.active {
-      background: rgba(255,255,255,1);
-    }
+
+.indicator.active {
+  background: rgba(255,255,255,1);
+}
 
 /* video card */
 .video-card {
@@ -345,13 +346,133 @@
       color: #fff;
     }
 
-#events {
+.news-marquee {
   position: relative;
-  background-image: url('Assets/student.jpg'); /* your image path */
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0;
+}
+
+.news-marquee::before,
+.news-marquee::after {
+  content: none;
+}
+
+.news-viewport {
+  overflow-x: auto;
+  scrollbar-width: auto;
+  -ms-overflow-style: none;
+  padding-bottom: 0.25rem;
+}
+
+.news-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.news-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.news-arrow {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-dark);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.08);
+}
+
+.news-arrow:hover {
+  background: #e0ecff;
+  transform: translateY(-1px);
+}
+
+.news-track {
+  --news-gap: 1rem;
+  display: flex;
+  gap: var(--news-gap);
+  width: fit-content;
+  padding: 0.35rem 0;
+}
+
+.news-card {
+  flex: 0 0 320px;
+  min-height: 280px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #0f172a;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+}
+
+.news-card .tag {
+  display: inline-block;
+  width: fit-content;
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--brand-dark);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.news-card .news-content {
+  margin-top: 0.75rem;
+}
+
+.news-card h5 {
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+  font-weight: 700;
+}
+
+.news-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.news-card .news-image {
+  height: 150px;
+  margin-top: 0.9rem;
+  border-radius: 0.85rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* works on desktop */
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+
+
+#events {
+  position: relative;
+  background-image: url('Assets/student.jpg'); /* replace with your school/news photo here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #fff;
   padding: 60px 0;
   min-height: 600px;
@@ -362,7 +483,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(157, 156, 156, 0.5); /* dark overlay */
+  background-color: rgba(15, 23, 42, 0.22);
   z-index: 0;
 }
 
@@ -458,7 +579,7 @@ footer a:hover { color: #fff; }
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
+        <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
 
         <li class="nav-item dropdown">
@@ -466,9 +587,9 @@ footer a:hover { color: #fff; }
             MORE
           </a>
           <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-            <li><a class="dropdown-item" href="history.html">History</a></li>
+            <li><a class="dropdown-item" href="history.html">HISTORY</a></li>
             <!-- <li><a class="dropdown-item" href="schedule.html">Schedule</a></li> -->
-            <li><a class="dropdown-item" href="staff.html">Staff</a></li>
+            <li><a class="dropdown-item" href="#"> E-LIBRARY</a></li>
           </ul>
         </li>
 
@@ -594,7 +715,7 @@ footer a:hover { color: #fff; }
       <div class="col-md-3">
         <div class="feature-box p-4 rounded-3 shadow-sm bg-white h-100 d-flex flex-column align-items-center justify-content-center">
           <i class="bi bi-people-fill fs-1 text-primary mb-2"></i>
-          <h2 class="count" data-target="501">0</h2>
+          <h2 class="count" data-target="541">0</h2>
           <p class="mb-0 fw-semibold">Students</p>
         </div>
       </div>
@@ -602,7 +723,7 @@ footer a:hover { color: #fff; }
       <div class="col-md-3">
         <div class="feature-box p-4 rounded-3 shadow-sm bg-white h-100 d-flex flex-column align-items-center justify-content-center">
           <i class="bi bi-building fs-1 text-success mb-2"></i>
-          <h2 class="count" data-target="14">0</h2>
+          <h2 class="count" data-target="15">0</h2>
           <p class="mb-0 fw-semibold">Classes</p>
         </div>
       </div>
@@ -708,26 +829,115 @@ footer a:hover { color: #fff; }
   </section>
  
 
-  <!-- Events & Announcements (static) -->
-  <section id="events" class="bg-light py-5" >
+  <!-- Events & Announcements -->
+  <section id="events" class="bg-light py-5">
     <div class="container container-narrow" data-aos="fade-left">
       <div class="text-center mb-4">
         <h2 class="h3 fw-bold">Announcements</h2>
       </div>
-      <div class="row g-4">
-        <div class="col-md-4">
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
           <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
             <h5 class="mb-2">Pocket money guidelines</h5>
             <p class="small-muted mb-0">Parents are advised to deposit pocket money through the discipline's office on the mobile money number 0799345086 or code 1810290 registered on the name Jean Olivier Hakizimana.</p>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
             <h5 class="mb-2">The term's schedule</h5>
             <p class="small-muted mb-0">Students should review the posted timetable on the notice board.</p>
           </div>
         </div>
-        
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h3 fw-bold mb-0">Events and updates</h2>
+        <div class="news-controls" aria-label="News navigation">
+          <button class="news-arrow" type="button" data-direction="prev" aria-label="Scroll left">&#10094;</button>
+          <button class="news-arrow" type="button" data-direction="next" aria-label="Scroll right">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="news-marquee" aria-label="School news and announcements">
+        <div class="news-viewport">
+          <div class="news-track">
+            <!-- news are added here not  below existing articles -->
+            
+            <article class="news-card">
+              <span class="tag">Community</span>
+              <div class="news-content">
+                <h5>Upcoming Annual Recollection</h5>
+                <p> Seminarians are going to have a spirtual recollection from  Wednesday on 07th October 2026
+                  to 11th october 2026. It's time for meditation where seminarians reflect on their lives and 
+                  their relationship with God.
+                </p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/Designer\ \(1\).png');"></div>
+            </article>
+
+             <article class="news-card">
+              <span class="tag">Community</span>
+              <div class="news-content">
+                <h5>E-RANGAMUNTU</h5>
+                <p>On 03rd october at PSSJ Nkumba, the Government program of e-rangamuntu has started,
+                   by taking identities of seminarians include: parents ID, their photos their names ... 
+                                  </p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/e.png');"></div>
+            </article> 
+           
+            
+            <article class="news-card">
+              <span class="tag">Sport</span>
+              <div class="news-content">
+                <h5>Sport improvement</h5>
+                <p>On 28th September at PSSJ Nkumba, Seminarians who play basket-ball were very happy
+                  due to seminary continue to develoup seminarians talent, where at first time in history of seminary,
+                  the basket-ball team was given a coach.</p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/Designer\ \(2\).png');"></div>
+            </article>
+
+            <article class="news-card">
+              <span class="tag">Community</span>
+              <div class="news-content">
+                <h5>First Visiting Sunday — 27 September 2026</h5>
+                <p>A beautiful first Visiting Sunday of the 2026–2027 academic year at PSSJ Nkumba. Parents came together to thank the seminary 
+              leadership for their dedication to nurturing their children in faith,
+               knowledge, and discipline.</p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/Designer.png');"></div>
+            </article>
+            
+              
+
+
+            <article class="news-card">
+              <span class="tag">Official opening</span>
+              <div class="news-content">
+                <h5>Official opening of academic year 2026-2027</h5>
+                <p>"Hearing goes with respecting" Mgr Vincent HAROLIMANA 
+                  explaining motto of year ("VENITE ET AUDITE"). <a href="https://youtu.be/Q-EKowFXO_o">Get more</a></p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/overture.PNG');"></div>
+            </article>
+            
+
+            <article class="news-card">
+              <span class="tag">Official opening</span>
+              <div class="news-content">
+                <h5>Official opening of academic year 2026-2027</h5>
+                <p>On 20th September 2026, Bishop of Ruhengeri Diocese Mgr Vincent HAROLIMANA officially 
+                  opened the academic year 2026-2027 with the motto "VENITE ET AUDITE". <a href="https://youtu.be/dmC7YTxarh4">Get more<a></a></p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/year.PNG');"></div>
+            </article>
+
+            
+
+           
+          </div>
         </div>
       </div>
     </div>
@@ -861,7 +1071,7 @@ footer a:hover { color: #fff; }
     <hr class="border-light my-4">
 
     <div class="text-center small text-white pb-3">
-      &copy; 2026 Petit Séminaire Saint‑Jean Nkumba. All rights reserved.
+      &copy; Petit Séminaire Saint‑Jean Nkumba. All rights reserved.
     </div>
 
 
@@ -980,6 +1190,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
   counters.forEach(counter => observer.observe(counter));
 
+  /* =========================
+     NEWS SCROLL
+  ========================= */
+  const newsViewport = document.querySelector('.news-viewport');
+  const newsTrack = document.querySelector('.news-track');
+  const newsArrows = document.querySelectorAll('.news-arrow');
+
+  if (newsViewport && newsTrack && newsArrows.length) {
+    const getScrollAmount = () => {
+      const firstCard = newsTrack.querySelector('.news-card');
+      return firstCard ? firstCard.getBoundingClientRect().width + 16 : 320;
+    };
+
+    newsArrows.forEach(button => {
+      button.addEventListener('click', () => {
+        const direction = button.dataset.direction === 'prev' ? -1 : 1;
+        newsViewport.scrollBy({
+          left: direction * getScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
 
   /* =========================
      AOS INIT
@@ -1042,6 +1276,8 @@ window.addEventListener("load", function () {
 
   window.addEventListener('resize', closeOffcanvasOnLarge);
 })();
+
+
 </script>
 <!-- Translator -->
 <div class="gtranslate_wrapper"></div>
