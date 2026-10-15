@@ -1,0 +1,253 @@
+<!--<!DOCTYPE html> 
+<html lang="en">
+<head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>News archive - Petit Seminaire Saint-Jean Nkumba</title> 
+  <meta name="description" content="All news of Petit Seminaire Saint-Jean Nkumba, by year." /> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" /> 
+    <div class="gtranslate_wrapper"></div> 
+  <style> 
+    :root {                                /* "root" = the whole page; here we store colours we reuse */
+      --brand: #0ea5e9; /* your light blue */
+      --brand-dark: #0369a1; /* your dark blue */
+    } 
+
+    .navbar { /* the top bar */
+      background: conic-gradient(from 120deg, var(--brand), white, var(--brand-dark)); /* the same colourful background as your home page bar */
+    } /* end of .navbar */
+    .navbar-nav .nav-link { /* the links inside the top bar */
+      color: var(--brand-dark); /* dark blue, easier to read than light blue on this background */
+      font-weight: 600; /* semi-bold letters */
+    } /* end of the links */
+    .navbar-nav .nav-link:hover { /* when the mouse is over a link */
+      text-decoration: underline; /* show an underline */
+    } /* end of the hover rule */
+
+    .motto-bar { /* the blue strip with the school motto */
+      background: var(--brand); /* light blue background */
+      color: #fff; /* white letters */
+      text-align: center; /* centred text */
+      padding: 0.8rem 1rem; /* space inside the strip */
+      font-weight: 700; /* bold letters */
+      letter-spacing: 0.02em; /* slightly wider letter spacing */
+    } /* end of .motto-bar */
+
+    .btn-blue-white { /* your blue button style */
+      background-color: var(--brand); /* blue button */
+      color: #fff; /* white letters */
+      border: none; /* no border line */
+      font-weight: 600; /* semi-bold letters */
+    } /* end of the button */
+    .btn-blue-white:hover { /* when the mouse is over the button */
+      background-color: var(--brand-dark); /* a darker blue */
+      color: #fff; /* keep the letters white */
+    } /* end of the button hover */
+
+    .container-narrow { /* a centred box that is not too wide */
+      max-width: 1100px; /* never wider than 1100 pixels */
+      margin: 0 auto; /* centre it */
+    } /* end of .container-narrow */
+
+    
+    .news-card { /* one news card */
+      min-height: 280px; /* not shorter than 280 pixels */
+      background: rgba(255, 255, 255, 0.82); /* white, slightly see-through */
+      color: #0f172a; /* very dark blue letters */
+      border-radius: 1rem; /* rounded corners */
+      padding: 1rem; /* space inside the card */
+      box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18); /* soft shadow under the card */
+      display: flex; /* arrange the content with flexbox */
+      flex-direction: column; /* content goes from top to bottom */
+      justify-content: center; /* centred vertically */
+      border: 1px solid rgba(15, 23, 42, 0.08); /* very light border */
+      overflow: hidden; /* anything bigger than the card is cut */
+    } 
+    .news-grid .news-card { /* cards inside the archive grid */
+      height: 100%; /* all cards in one row get the same height */
+    } /* end of the grid rule */
+    .news-card .tag { /* the small category label */
+      display: inline-block; /* behaves like a small box */
+      width: fit-content; /* only as wide as its words */
+      background: rgba(14, 165, 233, 0.12); /* very light blue background */
+      color: var(--brand-dark); /* dark blue letters */
+      border-radius: 999px; /* fully rounded ends */
+      padding: 0.3rem 0.65rem; /* space inside the label */
+      font-weight: 700; /* bold letters */
+      font-size: 0.72rem; /* small letters */
+      letter-spacing: 0.04em; /* slightly wider letters */
+      text-transform: uppercase; /* CAPITAL LETTERS */
+    } /* end of .tag */
+    .news-card .news-content { /* the box with title, date and text */
+      margin-top: 0.75rem; /* space above it */
+    } /* end of .news-content */
+    .news-card h5 { /* the card title */
+      font-size: 1.05rem; /* title size */
+      margin: 0 0 0.45rem; /* space only below the title */
+      font-weight: 700; /* bold */
+    } /* end of the title rule */
+    .news-card p { /* the card text */
+      margin: 0; /* no extra space around */
+      font-size: 0.88rem; /* slightly small text */
+      color: #475569; /* grey-blue letters */
+      line-height: 1.55; /* comfortable space between lines */
+    } /* end of the text rule */
+    .news-card .news-image { /* the picture at the bottom of the card */
+      height: 150px; /* picture area height */
+      margin-top: 0.9rem; /* space above the picture */
+      border-radius: 0.85rem; /* rounded corners */
+      background-size: cover; /* the picture fills the area */
+      background-position: center; /* the middle of the picture is shown */
+      background-repeat: no-repeat; /* the picture is not repeated */
+      border: 1px solid rgba(15, 23, 42, 0.08); /* very light border */
+    } /* end of the picture rule */
+
+     /* Footer */
+footer {
+  background: radial-gradient(circle at top left, #0d47a1, #08306b);
+  color: #f8f9fa; padding: 2.5rem 0;
+}
+footer a { color: #d1d8e0; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+/* Prevent long footer text breaking layout */
+footer .row > div {
+  word-break: break-word;
+}
+  </style> <!-- end of our design rules -->
+</head> <!-- end of the head -->
+
+<body> <!-- the body holds everything the visitor sees -->
+
+  <nav class="navbar navbar-expand-md navbar-light sticky-top shadow-sm"> <!-- the top bar: stays on top when scrolling, collapses on phones -->
+    <div class="container"> <!-- centred box for the bar content -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"> <!-- the logo, a link to the home page -->
+        <img src="Assets/logoooo.png" alt="School logo" style="height:50px;width:50px;object-fit:fill;"> <!-- the logo picture; alt is the text for people who cannot see it -->
+      </a> <!-- end of the logo link -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#archiveNav" aria-controls="archiveNav" aria-expanded="false" aria-label="Open menu"> <!-- the phone menu button: it opens the element with id archiveNav -->
+        <span class="navbar-toggler-icon"></span> <!-- the three-line menu icon -->
+      </button> <!-- end of the menu button -->
+      <div class="collapse navbar-collapse" id="archiveNav"> <!-- the menu that opens and closes on phones -->
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center"> <!-- the list of links, pushed to the right -->
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li> <!-- link to the home page -->
+          <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li> <!-- link to the staff page -->
+          <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li> <!-- link to the gallery page -->
+          <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li> <!-- link to the history page -->
+        </ul>
+      </div>
+    </div> 
+  </nav> <!-- end of the top bar -->
+  <div class="motto-bar">Ecce Mater Tua</div> <!-- the blue motto strip, like on the home page -->
+
+  <header class="bg-light py-5"> <!-- the title area with a light grey background and space above and below -->
+    <div class="container container-narrow">
+      <a href="index.html#events" class="small text-decoration-none">&larr; Back to home</a> <!-- a link back to the news area of the home page; &larr; is a left arrow -->
+      <h1 class="h2 fw-bold mt-2 mb-1">News archive</h1> <!-- the page title -->
+      <p class="text-muted mb-0">All the news of our seminary. Choose a year or search for a word.</p> <!-- a short explanation for the visitor -->
+    </div> <!-- end of the centred box -->
+  </header> <!-- end of the title area -->
+
+  <main class="py-5"> <!-- the main content of the page, with space above and below -->
+    <div class="container container-narrow"> <!-- centred box -->
+
+      <div class="row g-3 align-items-end mb-4"> <!-- one row for the filters; g-3 = gap between items; items aligned at the bottom -->
+        <div class="col-sm-4 col-md-3"> <!-- a column for the year dropdown -->
+          <label for="news-year" class="form-label fw-semibold">Year</label> <!-- the label; "for" connects it to the dropdown below -->
+          <select id="news-year" class="form-select"> <!-- the year dropdown; news.js fills it with the years -->
+            <option value="">All years</option> <!-- the first choice, before news.js fills the rest -->
+          </select> <!-- end of the dropdown -->
+        </div> <!-- end of the year column -->
+        <div class="col-sm-8 col-md-5"> <!-- a column for the search box -->
+          <label for="news-search" class="form-label fw-semibold">Search</label> <!-- the label for the search box -->
+          <input id="news-search" type="search" class="form-control" placeholder="Type a word, for example: sport" autocomplete="off"> <!-- the search box; placeholder is the grey example text -->
+        </div> <!-- end of the search column -->
+        <div class="col-md-4"> <!-- a column for the count sentence -->
+          <p id="news-count" class="mb-2 text-muted" aria-live="polite">Loading news...</p> <!-- news.js writes "12 news items in 2020" here; aria-live lets screen readers announce changes -->
+        </div> <!-- end of the count column -->
+      </div> <!-- end of the filter row -->
+
+      <div id="news-archive" class="row g-4 news-grid"></div> <!-- the holder where news.js puts the cards; g-4 = gap between cards -->
+
+      <div class="text-center mt-4"> <!-- a centred area for the button -->
+        <button id="news-load-more" type="button" class="btn btn-blue-white px-4 py-2" hidden>Show more</button> <!-- the Show more button; hidden until there are more cards -->
+      </div> <!-- end of the button area -->
+
+      <noscript> <!-- shown only if the visitor's browser has JavaScript turned off -->
+        <p class="text-center text-muted">Please turn on JavaScript to see the news archive.</p> 
+      </noscript> 
+
+    </div> 
+  </main> 
+
+  <footer class="bg-dark text-light pt-5 position-relative">
+  <div class="container container-narrow">
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-4">
+        <h5 class="text-white fw-bold"><a href="index.html">Petit Séminaire Saint‑Jean Nkumba</a></h5>
+        <p class="text-white small">Educating with purpose since 1988. Burera, Rwanda.</p>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.instagram.com/petit_seminaire_de_nkumba?utm_source=ig_web_button_share_sheet&igsh=M2M0Y2JmOTAyOA==" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Academics Links -->
+      <div class="col-md-2">
+        <h5 class="text-white fw-bold">Academics</h5>
+        <ul class="list-unstyled mt-2 small">
+          <li><a href="#academics" class="text-white text-decoration-none">O Level</a></li>
+          <li><a href="#academics" class="text-white text-decoration-none">A Level</a></li>
+          <li><a href="#academics" class="text-white text-decoration-none">Arts & Music</a></li>
+        </ul>
+      </div>
+
+      <!-- Admissions Links -->
+      <div class="col-md-3">
+        <h5 class="text-white fw-bold">Admissions</h5>
+        <ul class="list-unstyled mt-2 small">
+          <li><a href="#admissions" class="text-white text-decoration-none">PARISH</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3">
+        <h5 class="text-white fw-bold">Contact</h5>
+        <ul class="list-unstyled mt-2 small text-white">
+          <li>Rectorat Office</li>
+          <li>+250 788 823 161</li>
+          <li>Burera, Rwanda</li>
+          <li><a href="mailto:psnkumbaped@yahoo.com" class="text-white text-decoration-none">psnkumbaped@yahoo.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-light my-4">
+
+    <div class="text-center small text-white pb-3">
+      &copy; 2026 Petit Séminaire Saint‑Jean Nkumba. All rights reserved.
+    </div>
+
+
+  </div>
+</footer>
+<!-- GTranslate Script -->
+    <script>
+window.gtranslateSettings = {
+  default_language: "en",
+  detect_browser_language: true,
+  languages: ["en", "fr", "sw", "la", "es", "de"], 
+  // en = English, fr = French, sw = Swahili, la = Latin, es = Spanish, de = German
+  wrapper_selector: ".gtranslate_wrapper",
+  switcher_horizontal_position: "right",
+  switcher_vertical_position: "bottom",
+  float_switcher_open_direction: "top",
+  flag_style: "3d"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap's JavaScript, needed for the phone menu button -->
+  <script src="news.js"></script> <!-- our news script: it fills the dropdown and the cards. It is placed last so that all the elements above already exist -->
+</body> <!-- end of the body -->
+</html> <!-- end of the page --> --->

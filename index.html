@@ -465,6 +465,50 @@
 }
 
 
+/* "More news" end card: the last card of the row; the whole card is a link to the archive page */
+.news-card.news-more {
+  align-items: center;                                   /* centre the content horizontally */
+  justify-content: center;                               /* centre the content vertically */
+  text-align: center;                                    /* centre the words */
+  text-decoration: none;                                 /* remove the underline of a link */
+  color: #fff;                                           /* white text */
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand)); /* blue gradient, like your navbar colours */
+  border-color: transparent;                             /* no light border */
+  transition: transform .2s ease, box-shadow .2s ease;   /* smooth movement when the mouse comes */
+}
+.news-card.news-more:hover,
+.news-card.news-more:focus-visible {                     /* mouse over, or reached with the keyboard */
+  transform: translateY(-6px);                           /* lift the card a little */
+  box-shadow: 0 1.2rem 2rem rgba(15, 23, 42, 0.28);      /* stronger shadow */
+  color: #fff;                                           /* keep the text white */
+}
+.news-more .news-more-icon {                             /* the circle that holds the arrow */
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;                                    /* makes it a circle */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);                  /* soft white circle */
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: transform .2s ease;
+}
+.news-more:hover .news-more-icon,
+.news-more:focus-visible .news-more-icon {
+  transform: translateX(6px);                            /* the arrow moves to the right on hover */
+}
+.news-card.news-more h5 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem;
+}
+.news-card.news-more p {
+  color: rgba(255, 255, 255, 0.9);                       /* slightly softer white */
+}
+
+
 
 #events {
   position: relative;
@@ -861,9 +905,18 @@ footer a:hover { color: #fff; }
 
       <div class="news-marquee" aria-label="School news and announcements">
         <div class="news-viewport">
-          <div class="news-track">
+          <div class="news-track" id="news-list"> 
             <!-- news are added here not  below existing articles -->
-            
+            <article class="news-card">
+              <span class="tag">Community</span>
+              <div class="news-content">
+                <h5> Upcoming Visiting Sunday — 18 October 2026</h5>
+                <p>on october 18th, 2026, parents and guardians are invited to visit their children at the seminary. 
+                  It's a day of joy, where parents come to witness the growth and achievements of their children.</p>
+              </div>
+              <div class="news-image" style="background-image: url('Assets/Designer.png');"></div>
+            </article> 
+
             <article class="news-card">
               <span class="tag">Community</span>
               <div class="news-content">
@@ -908,9 +961,7 @@ footer a:hover { color: #fff; }
                knowledge, and discipline.</p>
               </div>
               <div class="news-image" style="background-image: url('Assets/Designer.png');"></div>
-            </article>
-            
-              
+            </article> 
 
 
             <article class="news-card">
@@ -1299,4 +1350,5 @@ window.gtranslateSettings = {
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script></body>
+<script src="news.js"></script>
 </html>
