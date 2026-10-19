@@ -102,6 +102,42 @@
       border: 1px solid rgba(15, 23, 42, 0.08); /* very light border */
     } /* end of the picture rule */
 
+    .news-grid > [class*="col-"] {
+      min-width: 0;
+    }
+
+    .news-card,
+    .news-card h5,
+    .news-card p {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 575.98px) {
+      .motto-bar {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      header.bg-light {
+        padding-block: 2rem !important;
+      }
+
+      main.py-5 {
+        padding-block: 2rem !important;
+      }
+
+      .news-grid.row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+      }
+
+      .news-card {
+        min-height: 0;
+        padding: 0.875rem;
+      }
+    }
+
      /* Footer */
 footer {
   background: radial-gradient(circle at top left, #0d47a1, #08306b);
@@ -152,7 +188,6 @@ footer .row > div {
 
       <div class="row g-3 align-items-end mb-4"> <!-- one row for the filters; g-3 = gap between items; items aligned at the bottom -->
         <div class="col-sm-4 col-md-3"> <!-- a column for the year dropdown -->
-          <label for="news-year" class="form-label fw-semibold">Year</label> <!-- the label; "for" connects it to the dropdown below -->
           <select id="news-year" class="form-select"> <!-- the year dropdown; news.js fills it with the years -->
             <option value="">All years</option> <!-- the first choice, before news.js fills the rest -->
           </select> <!-- end of the dropdown -->
