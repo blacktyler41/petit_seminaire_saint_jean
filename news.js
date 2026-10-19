@@ -1,4 +1,4 @@
-/*const NEWS_URL = "data/news.json";
+const NEWS_URL = "data/news.json";
 const NEWS_LIMIT = 8;
 const NEWS_ARCHIVE_URL = "news.html";
 const NEWS_PAGE_SIZE = 12;

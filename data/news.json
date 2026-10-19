@@ -1,10 +1,19 @@
-/*{
+{
   "items": [
+    {
+      "date": "2026-10-18",
+      "category": "Community",
+      "title": "VISITING SUNDAY",
+      "text": "On 18th October 2026, the second Visiting Sunday of the academic year 2026-2027 was held at PSSJ Nkumba. Parents and guardians visited their children to witness their progress and share in their experiences.",
+      "image": "Assets/Designer.png",
+      "link": "https://mega.nz/folder/KjxQjKwb#UL0591wwzEbvQDCF9MRw1A",
+      "published": true
+    },
     {
       "date": "2026-10-07",
       "category": "Community",
-      "title": "Upcoming Annual Recollection",
-      "text": "Seminarians are going to have a spirtual recollection from Wednesday on 07th October 2026 to 11th october 2026. It's time for meditation where seminarians reflect on their lives and their relationship with God.",
+      "title": "Annual Recollection",
+      "text": "Seminarians are going to have a spirtual recollection from Wednesday on 07th October 2026 to 11th october 2026, with theme 'VENITE ET AUDITE' By Father preecher Jean Damascene TUYISHIME. It's time for meditation where seminarians reflect on their lives and their relationship with God.",
       "image": "Assets/Designer (1).png",
       "link": "",
       "published": true
