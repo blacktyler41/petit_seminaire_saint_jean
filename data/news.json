@@ -1,6 +1,15 @@
 {
   "items": [
     {
+      "date": "2026-10-22",
+      "category": "Community",
+      "title": "FOOTBALL COACH",
+      "text": "Seminarians who play football have got a new coach, in the program of seminary to develop talent of seminarians.",
+      "image": "Assets/photo_new_football_coach.jpg",
+      "link": "",
+      "published": true
+    },
+    {
       "date": "2026-10-18",
       "category": "Community",
       "title": "VISITING SUNDAY",

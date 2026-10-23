@@ -155,26 +155,51 @@ footer .row > div {
 
 <body> <!-- the body holds everything the visitor sees -->
 
-  <nav class="navbar navbar-expand-md navbar-light sticky-top shadow-sm"> <!-- the top bar: stays on top when scrolling, collapses on phones -->
-    <div class="container"> <!-- centred box for the bar content -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"> <!-- the logo, a link to the home page -->
-        <img src="Assets/logoooo.png" alt="School logo" style="height:50px;width:50px;object-fit:fill;"> <!-- the logo picture; alt is the text for people who cannot see it -->
-      </a> <!-- end of the logo link -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#archiveNav" aria-controls="archiveNav" aria-expanded="false" aria-label="Open menu"> <!-- the phone menu button: it opens the element with id archiveNav -->
-        <span class="navbar-toggler-icon"></span> <!-- the three-line menu icon -->
-      </button> <!-- end of the menu button -->
-      <div class="collapse navbar-collapse" id="archiveNav"> <!-- the menu that opens and closes on phones -->
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center"> <!-- the list of links, pushed to the right -->
-          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li> <!-- link to the home page -->
-          <li class="nav-item"><a class="nav-link" href="staff.html">STAFF</a></li> <!-- link to the staff page -->
-          <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li> <!-- link to the gallery page -->
-          <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li> <!-- link to the history page -->
-        </ul>
-      </div>
-    </div> 
-  </nav> <!-- end of the top bar -->
-  <div class="motto-bar">Ecce Mater Tua</div> <!-- the blue motto strip, like on the home page -->
+ <!-- Navbar with Offcanvas for mobile -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top shadow-sm">
+        <div class="container d-flex">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="Assets/logoooo.png" alt="School logo" class="" style="height:50px;width:50px;object-fit:fill;">
+            </a>
 
+            <!-- Offcanvas toggler (mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop nav -->
+            <div class="collapse navbar-collapse" id="desktopNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                   <!----<li class="nav-item"><a class="nav-link" href="schedule.html">SCHEDULE</a></li>-->
+                   <li class="nav-item"><a class="nav-link" href="#">E-LIBRARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">HISTORY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas mobile menu -->
+   
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="d-flex-column">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-dismiss="offcanvas">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html" data-dismiss="offcanvas">GALLERY</a></li>
+        <li class="nav-item"><a class="nav-link" href="history.html" data-dismiss="offcanvas">HISTORY</a></li>
+        <!--<li class="nav-item"><a class="nav-link" href="schedule.html" data-dismiss="offcanvas">SCHEDULE</a></li>-->
+        <li class="nav-item"><a class="nav-link" href="#" data-dismiss="offcanvas">E-LIBRARY</a></li>
+
+        </ul>
+              </nav>
+      </div>
+    </div>
   <header class="bg-light py-5"> <!-- the title area with a light grey background and space above and below -->
     <div class="container container-narrow">
       <a href="index.html#events" class="small text-decoration-none">&larr; Back to home</a> <!-- a link back to the news area of the home page; &larr; is a left arrow -->
