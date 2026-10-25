@@ -1,8 +1,17 @@
 {
   "items": [
     {
+      "date": "2026-10-24",
+      "category": "Sport",
+      "title": "Friendly match PSSJN VS UGHE",
+      "text": "on this 24th October 2026 Nkumba minor seminary hosted UGHE for friendly matches, their first visit to our grounds. Players from both sides came out for football, volleyball, basketball. And both teams hope this is the first of many meetings.",
+      "image": "Assets/UGHE.PNG",
+      "link": "",
+      "published": true
+    },
+    {
       "date": "2026-10-22",
-      "category": "Community",
+      "category": "Sport",
       "title": "FOOTBALL COACH",
       "text": "Seminarians who play football have got a new coach, in the program of seminary to develop talent of seminarians.",
       "image": "Assets/photo_new_football_coach.jpg",
