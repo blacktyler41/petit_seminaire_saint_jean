@@ -20,7 +20,7 @@
     <style>
         :root {
       --brand: #0ea5e9;
-      --brand-dark: #0369a1;
+      --brand-dark: blue;
       --muted: #6c757d;
       --card-radius: .75rem;
     }
@@ -32,9 +32,17 @@
     .offcanvas-body .nav-link { padding: .5rem 0; }
 
       /* make navbar itself full width gradient */
-    .navbar {
-      background: conic-gradient(from 120deg, var(--brand),white, var(--brand-dark));
-    }
+    .navbar { 
+      background: conic-gradient(from 120deg, var(--brand), white, var(--brand-dark)); /* the same colourful background as your home page bar */
+    } /* end of .navbar */
+    .navbar-nav .nav-link { /* the links inside the top bar */
+      color: white; /* dark blue, easier to read than light blue on this background */
+      font-weight: 600; /* semi-bold letters */
+      
+    } /* end of the links */
+    .navbar-nav .nav-link:hover { 
+      text-decoration: none; 
+    } 
 /* Offcanvas menu link spacing */
     .offcanvas-body .nav-link { padding: .5rem 0; }
     
