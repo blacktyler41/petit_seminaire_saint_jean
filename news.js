@@ -5,9 +5,17 @@ const NEWS_PAGE_SIZE = 12;
 const NEWS_BOX_ID = "news-list";
 const NEWS_ARCHIVE_ID = "news-archive";
 const NEWS_CACHE_KEY = "pssj_news_cache";
+const NEWS_EXCERPT_CHARS = 75;   
 
 function isSafeLink(u) {
   return /^https?:\/\//i.test(u);
+}
+function excerptOf(text) {
+  if (!text || text.length <= NEWS_EXCERPT_CHARS) return null;
+  let cut = text.slice(0, NEWS_EXCERPT_CHARS);
+  const space = cut.lastIndexOf(" ");
+  if (space > 80) cut = cut.slice(0, space);
+  return cut.replace(/[\s.,;:!?\-–—]+$/, "") + "…";
 }
 
 function imageUrl(path) {
@@ -30,29 +38,41 @@ function buildCard(n) {
   const card = document.createElement("article");
   card.className = "news-card";
 
-  if (n.category) {
-    const tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = n.category;
-    card.appendChild(tag);
+  if (n.image) {
+    const img = document.createElement("div");
+    img.className = "news-image";
+    img.style.backgroundImage = 'url("' + imageUrl(n.image) + '")';
+    card.appendChild(img);
   }
 
-  const content = document.createElement("div");
-  content.className = "news-content";
+  const body = document.createElement("div");
+  body.className = "news-body";
+
+  const meta = document.createElement("div");
+  meta.className = "news-meta";
+
+  if (n.category) {
+    const cat = document.createElement("span");
+    cat.className = "news-cat";
+    cat.textContent = n.category;
+    meta.appendChild(cat);
+    body.appendChild(meta);
+  }
 
   const h5 = document.createElement("h5");
+  h5.className = "news-title";
   h5.textContent = n.title;
-  content.appendChild(h5);
 
-  if (n.date) {
-    const d = document.createElement("small");
-    d.className = "d-block text-muted mb-1";
-    d.textContent = formatDate(n.date);
-    content.appendChild(d);
-  }
+  const fullText = n.text || "";
+  const shortText = excerptOf(fullText);
 
   const p = document.createElement("p");
-  p.textContent = n.text || "";
+  p.className = "news-text";
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent = shortText || fullText;
+  p.appendChild(textSpan);
+
   if (n.link && isSafeLink(n.link)) {
     p.appendChild(document.createTextNode(" "));
     const a = document.createElement("a");
@@ -62,16 +82,26 @@ function buildCard(n) {
     a.textContent = "Get more";
     p.appendChild(a);
   }
-  content.appendChild(p);
-  card.appendChild(content);
 
-  if (n.image) {
-    const img = document.createElement("div");
-    img.className = "news-image";
-    img.style.backgroundImage = 'url("' + imageUrl(n.image) + '")';
-    card.appendChild(img);
+  body.appendChild(h5);
+  body.appendChild(p);
+
+  if (shortText) {
+    const more = document.createElement("button");
+    more.type = "button";
+    more.className = "news-readmore";
+    more.textContent = "Read more";
+    more.setAttribute("aria-expanded", "false");
+    more.addEventListener("click", () => {
+      const open = more.getAttribute("aria-expanded") === "true";
+      textSpan.textContent = open ? shortText : fullText;
+      more.textContent = open ? "Read more" : "Show less";
+      more.setAttribute("aria-expanded", String(!open));
+    });
+    body.appendChild(more);
   }
 
+  card.appendChild(body);
   return card;
 }
 
@@ -183,12 +213,7 @@ function renderArchive(items) {
     );
 
     box.innerHTML = "";
-    found.slice(0, visible).forEach(n => {
-      const col = document.createElement("div");
-      col.className = "col-md-6 col-lg-4";
-      col.appendChild(buildCard(n));
-      box.appendChild(col);
-    });
+        found.slice(0, visible).forEach(n => box.appendChild(buildCard(n)));
 
     let text = found.length === 0 ? "No news found." : found.length + (found.length === 1 ? " news item" : " news items");
     if (found.length && year) text += " in " + year;

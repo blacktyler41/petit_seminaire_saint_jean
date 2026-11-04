@@ -446,30 +446,10 @@ h1, h2, h3, h4, h5, h6,
       color: #fff;
     }
 
+./* ---- News carousel (home page) ---- */
 .news-marquee {
   position: relative;
-  overflow: hidden;
-  border-radius: 1.25rem;
-  background: transparent;
-  border: none;
-  box-shadow: none;
   padding: 0.5rem 0;
-}
-
-.news-marquee::before,
-.news-marquee::after {
-  content: none;
-}
-
-.news-viewport {
-  overflow-x: auto;
-  scrollbar-width: auto;
-  -ms-overflow-style: none;
-  padding-bottom: 0.25rem;
-}
-
-.news-viewport::-webkit-scrollbar {
-  display: none;
 }
 
 .news-controls {
@@ -478,54 +458,93 @@ h1, h2, h3, h4, h5, h6,
   gap: 0.75rem;
 }
 
+.news-viewport {
+  flex: 1;
+  min-width: 0;                    /* lets the cards scroll instead of pushing the arrows away */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.5rem 0.25rem 1rem;    /* room for the card shadows */
+}
+.news-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.news-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;  
+  align-items: stretch;             /* as wide as all the cards put together */
+}
+
 .news-arrow {
+  flex: 0 0 42px;
   width: 42px;
   height: 42px;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--brand-dark);
-  border: 1px solid rgba(37, 99, 235, 0.18);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.05rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  background: #fff;
+  color: var(--brand-dark);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 50%;
   box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.08);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
-
 .news-arrow:hover {
   background: #e0ecff;
   transform: translateY(-1px);
 }
 
-.news-track {
-  --news-gap: 1rem;
-  display: flex;
-  gap: var(--news-gap);
-  width: fit-content;
-  padding: 0.35rem 0;
-}
-
+/* ---- News card ---- */
+/* ---- News card: photo fills the top, sized by the card width ---- */
 .news-card {
-  flex: 0 0 320px;
-  min-height: 280px;
-  background: rgba(255, 255, 255, 0.82);
-  color: #0f172a;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18);
+  flex: 0 0 min(320px, 80vw);   /* card width in the carousel */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  overflow: hidden;
+  padding: 0;                   /* photo touches the card edges */
+  background: #fff;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18);
+  overflow: hidden;             /* clips the photo to the rounded corners */
 }
 
-.news-card .tag {
+.news-image,
+.news-card .news-image {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;         /* height follows the width, so the photo fits */
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #eef0f3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.news-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                     /* height follows the content, not the card */
+  margin-top: 0;
+  padding: 1rem 1.1rem 1.1rem;  /* space for the text below the photo */
+}
+
+/* keep padding on the "More news" card, since the card itself now has none */
+.news-card.news-more {
+  padding: 1.25rem;
+}
+
+.news-cat {
   display: inline-block;
   width: fit-content;
+  align-self: flex-start;
   background: rgba(14, 165, 233, 0.12);
   color: var(--brand-dark);
   border-radius: 999px;
@@ -534,70 +553,84 @@ h1, h2, h3, h4, h5, h6,
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  margin-bottom: 0.6rem;
 }
 
-.news-card .news-content {
-  margin-top: 0.75rem;
-}
-
-.news-card h5 {
-  font-size: 1.05rem;
+.news-title {
   margin: 0 0 0.45rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  line-height: 1.3;
+  min-height: 2.6em;
 }
 
-.news-card p {
-  margin: 0;
+.news-text {
+  margin: 0 0 0.25rem;
   font-size: 0.88rem;
   color: var(--muted);
   line-height: 1.55;
 }
-
-.news-card .news-image {
-  height: 150px;
-  margin-top: 0.9rem;
-  border-radius: 0.85rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+.news-text a {
+  color: #0d6efd;
+  font-weight: 600;
 }
 
+.news-readmore {
+  display: inline-block;
+  margin: 0;                 /* button sits directly under the text */
+  align-self: flex-start;
+  padding: 0;
+  line-height: 1.2;
+  background: none;
+  border: 0;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+}
+.news-readmore:hover {
+  text-decoration: underline;
+}
 
-/* "More news" end card: the last card of the row; the whole card is a link to the archive page */
+/* ---- News archive page (grid) ---- */
+#news-archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+/* ---- "More news" card: blue gradient, white text, hover lift ---- */
 .news-card.news-more {
-  align-items: center;                                   /* centre the content horizontally */
-  justify-content: center;                               /* centre the content vertically */
-  text-align: center;                                    /* centre the words */
-  text-decoration: none;                                 /* remove the underline of a link */
-  color: #fff;                                           /* white text */
-  background: linear-gradient(135deg, var(--brand-dark), var(--brand)); /* blue gradient, like your navbar colours */
-  border-color: transparent;                             /* no light border */
-  transition: transform .2s ease, box-shadow .2s ease;   /* smooth movement when the mouse comes */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  border-color: transparent;
+  padding: 1.25rem;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .news-card.news-more:hover,
-.news-card.news-more:focus-visible {                     /* mouse over, or reached with the keyboard */
-  transform: translateY(-6px);                           /* lift the card a little */
-  box-shadow: 0 1.2rem 2rem rgba(15, 23, 42, 0.28);      /* stronger shadow */
-  color: #fff;                                           /* keep the text white */
+.news-card.news-more:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 1.2rem 2rem rgba(15, 23, 42, 0.28);
+  color: #fff;
 }
-.news-more .news-more-icon {                             /* the circle that holds the arrow */
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;                                    /* makes it a circle */
+.news-more .news-more-icon {
+  width: 52px;
+  height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.2);                  /* soft white circle */
-  font-size: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1.6rem;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   transition: transform .2s ease;
 }
 .news-more:hover .news-more-icon,
 .news-more:focus-visible .news-more-icon {
-  transform: translateX(6px);                            /* the arrow moves to the right on hover */
+  transform: translateX(6px);
 }
 .news-card.news-more h5 {
   color: #fff;
@@ -605,9 +638,9 @@ h1, h2, h3, h4, h5, h6,
   margin: 0 0 0.4rem;
 }
 .news-card.news-more p {
-  color: rgba(255, 255, 255, 0.9);                       /* slightly softer white */
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
 }
-
 
 
 #events {

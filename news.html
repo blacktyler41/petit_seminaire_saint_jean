@@ -7,153 +7,162 @@
   <meta name="description" content="All news of Petit Seminaire Saint-Jean Nkumba, by year." /> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" /> 
     <div class="gtranslate_wrapper"></div> 
-  <style> 
-    :root {
-      --brand: #0ea5e9;
-      --brand-dark: blue;
-      --muted: #6c757d;
-      --card-radius: .75rem;
+  <style>
+  :root {
+    --brand: #0ea5e9;
+    --brand-dark: blue;
+    --muted: #6c757d;
+    --card-radius: .75rem;
+  }
+
+  .navbar {
+    background: conic-gradient(from 120deg, var(--brand), white, var(--brand-dark));
+  }
+  .navbar-nav .nav-link {
+    color: white;
+    font-weight: 600;
+  }
+  .navbar-nav .nav-link:hover {
+    text-decoration: none;
+  }
+
+  .motto-bar {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-blue-white {
+    background-color: var(--brand);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+  }
+  .btn-blue-white:hover {
+    background-color: var(--brand-dark);
+    color: #fff;
+  }
+
+  .container-narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ---- Archive grid: equal-size cards in each row ---- */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ---- News card (same design as the home page) ---- */
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    background: #fff;
+    color: #0f172a;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18);
+    overflow: hidden;
+  }
+
+  .news-card .news-image {
+    flex-shrink: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #eef0f3;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .news-card .news-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem 1.1rem 1.1rem;
+  }
+
+  .news-card .news-cat {
+    display: inline-block;
+    width: fit-content;
+    align-self: flex-start;
+    background: rgba(14, 165, 233, 0.12);
+    color: var(--brand-dark);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .news-card .news-title {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .news-card .news-text {
+    margin: 0 0 0.25rem;
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  .news-card .news-text a {
+    color: #0d6efd;
+    font-weight: 600;
+  }
+
+  .news-card .news-readmore {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    background: none;
+    border: 0;
+    color: #0d6efd;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .news-card .news-readmore:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 575.98px) {
+    .motto-bar {
+      padding: 0.65rem 0.8rem;
+      font-size: 0.95rem;
     }
-
-    .navbar { 
-      background: conic-gradient(from 120deg, var(--brand), white, var(--brand-dark)); /* the same colourful background as your home page bar */
-    } /* end of .navbar */
-    .navbar-nav .nav-link { /* the links inside the top bar */
-      color: white; /* dark blue, easier to read than light blue on this background */
-      font-weight: 600; /* semi-bold letters */
-      
-    } /* end of the links */
-    .navbar-nav .nav-link:hover { 
-      text-decoration: none; 
-    } 
-    
-    .motto-bar { /* the blue strip with the school motto */
-      background: var(--brand); /* light blue background */
-      color: #fff; /* white letters */
-      text-align: center; /* centred text */
-      padding: 0.8rem 1rem; /* space inside the strip */
-      font-weight: 700; /* bold letters */
-      letter-spacing: 0.02em; /* slightly wider letter spacing */
-    } /* end of .motto-bar */
-
-    .btn-blue-white { /* your blue button style */
-      background-color: var(--brand); /* blue button */
-      color: #fff; /* white letters */
-      border: none; /* no border line */
-      font-weight: 600; /* semi-bold letters */
-    } /* end of the button */
-    .btn-blue-white:hover { /* when the mouse is over the button */
-      background-color: var(--brand-dark); /* a darker blue */
-      color: #fff; /* keep the letters white */
-    } /* end of the button hover */
-
-    .container-narrow { /* a centred box that is not too wide */
-      max-width: 1100px; /* never wider than 1100 pixels */
-      margin: 0 auto; /* centre it */
-    } /* end of .container-narrow */
-
-    
-    .news-card { /* one news card */
-      min-height: 280px; /* not shorter than 280 pixels */
-      background: rgba(255, 255, 255, 0.82); /* white, slightly see-through */
-      color: #0f172a; /* very dark blue letters */
-      border-radius: 1rem; /* rounded corners */
-      padding: 1rem; /* space inside the card */
-      box-shadow: 0 0.8rem 1.5rem rgba(15, 23, 42, 0.18); /* soft shadow under the card */
-      display: flex; /* arrange the content with flexbox */
-      flex-direction: column; /* content goes from top to bottom */
-      justify-content: center; /* centred vertically */
-      border: 1px solid rgba(15, 23, 42, 0.08); /* very light border */
-      overflow: hidden; /* anything bigger than the card is cut */
-    } 
-    .news-grid .news-card { /* cards inside the archive grid */
-      height: 100%; /* all cards in one row get the same height */
-    } /* end of the grid rule */
-    .news-card .tag { /* the small category label */
-      display: inline-block; /* behaves like a small box */
-      width: fit-content; /* only as wide as its words */
-      background: rgba(14, 165, 233, 0.12); /* very light blue background */
-      color: var(--brand-dark); /* dark blue letters */
-      border-radius: 999px; /* fully rounded ends */
-      padding: 0.3rem 0.65rem; /* space inside the label */
-      font-weight: 700; /* bold letters */
-      font-size: 0.72rem; /* small letters */
-      letter-spacing: 0.04em; /* slightly wider letters */
-      text-transform: uppercase; /* CAPITAL LETTERS */
-    } /* end of .tag */
-    .news-card .news-content { /* the box with title, date and text */
-      margin-top: 0.75rem; /* space above it */
-    } /* end of .news-content */
-    .news-card h5 { /* the card title */
-      font-size: 1.05rem; /* title size */
-      margin: 0 0 0.45rem; /* space only below the title */
-      font-weight: 700; /* bold */
-    } /* end of the title rule */
-    .news-card p { /* the card text */
-      margin: 0; /* no extra space around */
-      font-size: 0.88rem; /* slightly small text */
-      color: #475569; /* grey-blue letters */
-      line-height: 1.55; /* comfortable space between lines */
-    } /* end of the text rule */
-    .news-card .news-image { /* the picture at the bottom of the card */
-      height: 150px; /* picture area height */
-      margin-top: 0.9rem; /* space above the picture */
-      border-radius: 0.85rem; /* rounded corners */
-      background-size: cover; /* the picture fills the area */
-      background-position: center; /* the middle of the picture is shown */
-      background-repeat: no-repeat; /* the picture is not repeated */
-      border: 1px solid rgba(15, 23, 42, 0.08); /* very light border */
-    } /* end of the picture rule */
-
-    .news-grid > [class*="col-"] {
-      min-width: 0;
+    header.bg-light {
+      padding-block: 2rem !important;
     }
-
-    .news-card,
-    .news-card h5,
-    .news-card p {
-      min-width: 0;
-      overflow-wrap: anywhere;
+    main.py-5 {
+      padding-block: 2rem !important;
     }
+  }
 
-    @media (max-width: 575.98px) {
-      .motto-bar {
-        padding: 0.65rem 0.8rem;
-        font-size: 0.95rem;
-      }
-
-      header.bg-light {
-        padding-block: 2rem !important;
-      }
-
-      main.py-5 {
-        padding-block: 2rem !important;
-      }
-
-      .news-grid.row {
-        --bs-gutter-x: 1rem;
-        --bs-gutter-y: 1rem;
-      }
-
-      .news-card {
-        min-height: 0;
-        padding: 0.875rem;
-      }
-    }
-
-     /* Footer */
-footer {
-  background: radial-gradient(circle at top left, #0d47a1, #08306b);
-  color: #f8f9fa; padding: 2.5rem 0;
-}
-footer a { color: #d1d8e0; text-decoration: none; }
-footer a:hover { color: #fff; }
-
-/* Prevent long footer text breaking layout */
-footer .row > div {
-  word-break: break-word;
-}
-  </style> 
+  /* Footer */
+  footer {
+    background: radial-gradient(circle at top left, #0d47a1, #08306b);
+    color: #f8f9fa;
+    padding: 2.5rem 0;
+  }
+  footer a { color: #d1d8e0; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer .row > div { word-break: break-word; }
+</style>
 </head> 
 
 <body> <!-- the body holds everything the visitor sees -->
@@ -229,7 +238,7 @@ footer .row > div {
         </div> <!-- end of the count column -->
       </div> <!-- end of the filter row -->
 
-      <div id="news-archive" class="row g-4 news-grid"></div> <!-- the holder where news.js puts the cards; g-4 = gap between cards -->
+      <div id="news-archive" class="news-grid"></div>
 
       <div class="text-center mt-4"> <!-- a centred area for the button -->
         <button id="news-load-more" type="button" class="btn btn-blue-white px-4 py-2" hidden>Show more</button> <!-- the Show more button; hidden until there are more cards -->
