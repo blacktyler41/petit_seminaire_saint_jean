@@ -253,9 +253,8 @@ h1, h2, h3, h4, h5, h6,
 }
 /* Daily Word section: picture behind, dark layer on top */
 #about-us {
-  background-image:
-    linear-gradient(rgba(10, 43, 121, 0.55), rgb(4, 2, 26)),
-    url('Assets/visit.png');
+ 
+  background-image: url("Assets/overview.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -377,6 +376,7 @@ h1, h2, h3, h4, h5, h6,
   z-index: 1; /* keep video below */
 }
 
+
 /* play button */
 .play-btn {
   width: 45px;
@@ -445,6 +445,76 @@ h1, h2, h3, h4, h5, h6,
       background-color: var(--brand-dark);
       color: #fff;
     }
+/* ---- About Us + Patron Saint (combined) ---- */
+.about-combined {
+  background-image:
+    linear-gradient(rgba(10, 43, 121, 0.55), rgb(4, 2, 26)),
+    url('Assets/visit.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.about-combined .about-title {
+  color: #fff;               /* white instead of the blue heading colour */
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.about-combined .about-lead {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+}
+
+.about-combined p {
+  color: #fff;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+/* translucent panel on the right, like the box in your picture */
+.about-panel {
+  height: 100%;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 139, 0.55);   /* change the colour or the last number (opacity) here */
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.saint-row {
+  display: flex;
+  flex-wrap: wrap;           /* on small screens the text drops below the photo */
+  gap: 1.25rem;
+  align-items: flex-start;   /* photo and text start at the top */
+}
+
+.saint-img {
+  flex: 0 0 200px;           /* photo width; change 200px to make it bigger or smaller */
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.85rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.saint-text {
+  flex: 1 1 220px;           /* text takes the rest of the space beside the photo */
+  min-width: 0;
+}
+
+@media (max-width: 991px) {
+  .about-combined {
+    background-attachment: scroll;   /* phones don't handle fixed backgrounds well */
+  }
+  .about-panel {
+    margin-top: 1rem;
+  }
+}
+
+
 
 ./* ---- News carousel (home page) ---- */
 .news-marquee {
@@ -722,7 +792,66 @@ footer a:hover { color: #fff; }
     /* Offcanvas menu link spacing */
     .offcanvas-body .nav-link { padding: .5rem 0; }
 
+ /* =========================================================
+   BACKGROUND PHOTOS: About Us and Announcements
+   Phones and tablets: photo rolls with the page
+   Computers: photo stays still while the text scrolls
+   ========================================================= */
+
+/* ---- Shared rules ---- */
+#about-us,
+#events {
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* phones and tablets: photo rolls with the page */
+}
+
+/* ---- About Us photo ---- */
+#about-us {
+  background-image:
   
+    url("Assets/overview.png");  /* change the photo here */
+  color: #fff;
+}
+
+/* ---- Announcements photo ---- */
+#events {
+  background-image: url("Assets/student.jpg");  /* change the photo here */
+  color: #fff;
+  overflow: hidden;
+  min-height: 0;
+}
+#events::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);  /* darker = easier to read */
+  pointer-events: none;
+  z-index: 0;
+}
+#events > .container {
+  position: relative;
+  z-index: 1;
+}
+#events h2 {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* ---- Computers: photo stays attached while the text scrolls ---- */
+@media (min-width: 992px) {
+  #about-us,
+  #events {
+    background-attachment: fixed;
+  }
+  #events {
+    min-height: 600px;
+  }
+} 
+
 
  </style>
 </head>
@@ -849,67 +978,42 @@ footer a:hover { color: #fff; }
 
 </section>
   
-<!-- About Us Text -->
-  <section id="about-us" class="bg-light py-5">
-  <div class=" container container-narrow">
-    <div class="text-center mb-4">
-      <h2 class="h2 fw-bold" data-aos="fade-up">About Us</h2>
-      <p class="small-white" data-aos="fade-up">Who we are and what we stand for</p>
-    </div>
-   <div class="row section-bg p-5 rounded-3" data-aos="fade-up">
-    <div class="col-lg-7">
-    <p class="small-muted " style="color: white;">
-      Our seminary is a centre of academic excellence and spirtual growth, preparing young catholic men
-      to serve in their community and church with outstanding academics, social and spiritual values. 
-    </p>
-    <p class="small-muted" style="color: white;">
-     We nurture students to discover their vocations and talents, helping them grow and 
-     positively impact the wider world.  </p>
-     <p class="small-muted" style="color: white;"> Minor seminary empasizes discipline, personal responsibility, prayer, 
-     community life and act as a bridge to major seminary,</p>
-     <p class="small-muted" style="color: white;"> The curriculum combines standard high school subjects with religious education, 
-      with special focus on Latin and Music
-    </p>
-    </div>
-
-   <div class="col-lg-5">
-     <img 
-      src="Assets/overview.png"
-      class="img-fluid rounded-3 shadow-sm"
-      alt="School environment">
-  </div>
-  </div>
-</div>
-</section>
-    <!-- Patron Saint Section -->
+<!-- About Us + Patron Saint (combined) -->
+<section id="about-us" class="about-combined py-5">
    <div class="container container-narrow">
-    <div class="row g-4 mt-5 align-items-center">
-      <h3 class=" fw-semibold ">Our Patron Saint</h3>
-      <div class="col-lg-5" data-aos="zoom-in">
-        <img
-          src="Assets/saint_john.jpeg"
-          class="img-fluid rounded-3 shadow-sm"
-          style="max-width: 300px;"
-          alt="Saint John">
+    <div class="row g-4 align-items-stretch">
+
+      <!-- LEFT: About Us -->
+      <div class="col-lg-6" data-aos="fade-right">
+         <div class="about-panel">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-lead">Who we are and what we stand for</p>
+
+        <p>Our seminary is a centre of academic excellence and spiritual growth, preparing young Catholic men to serve in their community and church with outstanding academics, social and spiritual values.</p>
+        <p>We nurture students to discover their vocations and talents, helping them grow and positively impact the wider world.</p>
+        <p>The minor seminary emphasizes discipline, personal responsibility, prayer and community life, and acts as a bridge to the major seminary.</p>
+        <p>The curriculum combines standard high school subjects with religious education, with special focus on Latin and Music.</p>
+
+       </div>
       </div>
 
-      <div class="col-lg-7" data-aos="fade-left">
-        
-        <p class="small-muted fw-normal">
-          Saint John, is a symbol of courage, purity, and unwavering faith.
-          He inspires our students to grow in integrity, compassion, and 
-          resilience.
-        </p>
-        <p class="small-muted">
-         His life teaches us that greatness  by the strength of 
-          character and the courage to stand for what is right.
-        </p>
-     </div>
-
+      <!-- RIGHT: Patron Saint -->
+<div class="col-lg-6" data-aos="fade-left">
+  <div class="about-panel">
+    <div class="saint-row">
+      <img src="Assets/saint_john.jpeg" class="saint-img" alt="Saint John">
+      <div class="saint-text">
+        <h2 class="about-title">Our Patron Saint</h2>
+        <p>Saint John is a symbol of courage, purity and unwavering faith. He inspires our students to grow in integrity, compassion and resilience.</p>
+        <p>His life teaches us that greatness lies in the strength of character and the courage to stand for what is right.</p>
+      </div>
     </div>
-
   </div>
 
+    </div>
+  </div>
+</section>
+      
 
 <section id="board" class="py-5">
   <div class="container-fluid statouns-banner">

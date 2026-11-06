@@ -57,32 +57,28 @@ function onReady(fn) {
 }
 
 /* Meditations longer than this many characters get a "Read more" button */
-const PREVIEW_CHARS = 350;
+const PREVIEW_CHARS = 250;
 
-/* Builds the meditation paragraphs, with a "Read more" button when the text is long */
+/* Builds the meditation text, with a "Read more" button when it is longer than PREVIEW_CHARS */
 function meditationHtml(lines) {
-  const total = lines.join(" ").length;
+  const paragraphs = lines.map(line => (line || "").trim()).filter(Boolean);
+  const full = paragraphs.join("\n\n");
 
   /* Short text: show everything, no button */
-  if (total <= PREVIEW_CHARS) {
-    return lines.map(line => `<p>${escapeHtml(line)}</p>`).join("");
+  if (full.length <= PREVIEW_CHARS) {
+    return paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join("");
   }
 
-  /* Long text: count how many lines fit in the preview (at least one) */
-  let used = 0;
-  let count = 0;
-  for (const line of lines) {
-    if (count > 0 && used + line.length > PREVIEW_CHARS) break;
-    used += line.length;
-    count++;
-  }
+  /* Cut at PREVIEW_CHARS, but move back to the last space so no word is split */
+  let cut = full.lastIndexOf(" ", PREVIEW_CHARS);
+  if (cut < 1) cut = PREVIEW_CHARS;
 
-  const shown  = lines.slice(0, count).map(line => `<p>${escapeHtml(line)}</p>`).join("");
-  const hidden = lines.slice(count).map(line => `<p>${escapeHtml(line)}</p>`).join("");
+  const shown  = full.slice(0, cut).trimEnd();
+  const hidden = full.slice(cut);   /* starts with a space, so the words join up again */
 
+  /* The CSS below turns the blank lines between paragraphs into line breaks */
   return `
-    <div>${shown}</div>
-    <div class="daily-full" hidden>${hidden}</div>
+    <div class="daily-body">${escapeHtml(shown)}<span class="daily-full" hidden>${escapeHtml(hidden)}</span></div>
     <button type="button" class="btn btn-light btn-sm mt-2 daily-readmore" aria-expanded="false">Read more</button>`;
 }
 

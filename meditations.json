@@ -1,5 +1,38 @@
 [
   {
+    "date": "2026-11-06",
+    "title": " Friday of the Thirty-first Week in Ordinary Time - Our Citizenship Is in Heaven",
+    "readings": [
+      
+      {
+        "label": "First Reading",
+        "ref": "Philippians 3:17—4:1",
+        "link": "https://bible.usccb.org/bible/readings/110626.cfm"
+      },
+      {
+        "label": "Responsorial Psalm",
+        "ref": "Psalm 122:1-2, 3-4ab, 4cd-5",
+        "link": "https://bible.usccb.org/bible/readings/110626.cfm"
+      },
+     
+      {
+        "label": "Gospel",
+        "ref": "Luke 16:1-8",
+        "link": "https://bible.usccb.org/bible/readings/110626.cfm"
+      }
+    ],
+    "meditation": [
+    "Dear brothers and sisters in Christ,",
+    "Saint Paul reminds us of a fundamental truth of our faith: “Our citizenship is in heaven” (Phil 3:20). These words invite us never to lose sight of our true identity and our ultimate destination. Certainly, we live in this world, where we have responsibilities, projects and commitments, but we must never forget that our permanent home is with God. That is why we are called to live, even now, as citizens of heaven, allowing our choices, words and actions to be guided by the values of the Gospel. Preparing ourselves to enter our heavenly homeland means learning every day to love more deeply, to forgive, to serve others and to remain faithful to the Lord.",
+    "In today's Gospel (Lk 16:1-8), Jesus surprises us by praising the dishonest steward, not because of his dishonesty, but because of his resourcefulness and foresight. He knew how to take initiatives and use his intelligence to prepare for the future. In this way, Jesus invites us, too, to demonstrate creativity, discernment and determination in our spiritual journey. If people of this world are capable of using so much ingenuity to secure their earthly interests, how much more should the disciples of Christ put their intelligence, talents and resources at the service of God's Kingdom! Let us therefore not be passive in our faith. Rather, let us seek concrete ways of doing good, supporting others and making fruitful use of the gifts God has entrusted to us.",
+    "In this regard, the technological advances taking place in our world today, about which Pope Leo XIV invites us to reflect, particularly in his teaching on human dignity and technological progress, also offer us an opportunity to renew our Christian commitment. Technology is neither an end in itself nor a threat that must automatically be rejected; it can become a valuable instrument at the service of the Gospel, fraternity and human development, provided that it is used wisely and responsibly. Let us therefore put the possibilities of our time at the service of what is good, rather than allowing ourselves to become enslaved by them. The real question is not simply how far technological progress can take us in this world, but rather how we can use it to prepare ourselves better for our encounter with God. May all our initiatives, knowledge and talents help us draw closer to our heavenly homeland, where the Lord awaits us. Amen.",
+    "Father Dieudonné MANIRAGUHA"
+
+      
+    ]
+
+  },
+  {
     "date": "2026-11-05",
     "title": " Thursday of the Thirty-first Week in Ordinary Time",
     "readings": [
@@ -7,18 +40,18 @@
       {
         "label": "First Reading",
         "ref": "Philippians 3:3-8a",
-        "link": "https://bible.usccb.org/bible/philippians/3?3"
+        "link": "https://bible.usccb.org/bible/readings/110526.cfm"
       },
       {
         "label": "Responsorial Psalm",
         "ref": "Psalm 105:2-3, 4-5, 6-7",
-        "link": "https://bible.usccb.org/bible/psalms/105?2"
+        "link": "https://bible.usccb.org/bible/readings/110526.cfm"
       },
      
       {
         "label": "Gospel",
         "ref": "Luke 15:1-10",
-        "link": "https://bible.usccb.org/bible/luke/15?1"
+        "link": "https://bible.usccb.org/bible/readings/110526.cfm"
       }
     ],
     "meditation": [
@@ -39,18 +72,18 @@
       {
         "label": "First Reading",
         "ref": "Philippians 2:12-18",
-        "link": "https://bible.usccb.org/bible/philippians/2?12"
+        "link": "https://bible.usccb.org/bible/readings/110426.cfm"
       },
       {
         "label": "Responsorial Psalm",
         "ref": "Psalm 27:1, 4, 13-14",
-        "link": "https://bible.usccb.org/bible/psalms/27?1"
+        "link": "https://bible.usccb.org/bible/readings/110426.cfm"
       },
      
       {
         "label": "Gospel",
         "ref": "Luke 14:25-33",
-        "link": "https://bible.usccb.org/bible/luke/14?25"
+        "link": "https://bible.usccb.org/bible/readings/110426.cfm"
       }
     ],
     "meditation": [
@@ -70,12 +103,12 @@
       {
         "label": "First Reading",
         "ref": "Philippians 2:5-11",
-        "link": "https://bible.usccb.org/bible/philippians/2?5"
+        "link": "https://bible.usccb.org/bible/readings/110326.cfm"
       },
       {
         "label": "Responsorial Psalm",
         "ref": "Psalm 22:26b-27, 28-30ab, 30e, 31-32",
-        "link": "https://bible.usccb.org/bible/psalms/22?26"
+        "link": "https://bible.usccb.org/bible/readings/110326.cfm"
       },
      
       {
@@ -141,22 +174,22 @@
       {
         "label": "First Reading",
         "ref": "Revelation 7:2-4, 9-14",
-        "link": "https://bible.usccb.org/bible/revelation/7?2"
+        "link": "https://bible.usccb.org/bible/readings/110126.cfm"
       },
       {
         "label": "Responsorial Psalm",
         "ref": "Psalm 24:1bc-2, 3-4ab, 5-6",
-        "link": "https://bible.usccb.org/bible/psalms/24?1"
+        "link": "https://bible.usccb.org/bible/readings/110126.cfm"
       },
        {
         "label": "Second Reading",
         "ref": "1 John 3:1-3",
-        "link": "https://bible.usccb.org/bible/1john/3?1"
+        "link": "https://bible.usccb.org/bible/readings/110126.cfm"
       },
       {
         "label": "Gospel",
         "ref": "Matthew 5:1-12a",
-        "link": "https://bible.usccb.org/bible/matthew/5?1"
+        "link": "https://bible.usccb.org/bible/readings/110126.cfm"
       }
     ],
     "meditation": [
