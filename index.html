@@ -712,7 +712,12 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(255, 255, 255, 0.9);
 }
 
-
+.news-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
 #events {
   position: relative;
   background-image: url('Assets/student.jpg'); /* replace with your school/news photo here */
@@ -746,12 +751,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Mobile fallback: simulate fixed background */
-@media (max-width: 991px) {
-  #academics {
-    background-attachment: scroll; /* mobile doesn’t support fixed well */
-    background-position: center center;
-  }
-}
+
 
 
     /* Responsive typography */
@@ -879,9 +879,8 @@ footer a:hover { color: #fff; }
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
             <li><a class="dropdown-item" href="#daily-word" data-dismiss="offcanvas">Today's Meditation</a></li>
             <li><a class="dropdown-item" href="#about-us">About</a></li>
-            <li><a class="dropdown-item" href="#academics">Academics</a></li>
+            <li><a class="dropdown-item" href="join.html">Join Us</a></li>
             <li><a class="dropdown-item" href="#events">Announcements</a></li>
-            <li><a class="dropdown-item" href="#admissions">Admissions</a></li>
             <li><a class="dropdown-item" href="#location">Location</a></li>
           </ul>
         </li>
@@ -916,9 +915,8 @@ footer a:hover { color: #fff; }
       <nav class="nav flex-column">
         <a class="nav-link" href="#daily-word" data-dismiss="offcanvas">Today's Meditation</a>
         <a class="nav-link" href="#about-us" data-dismiss="offcanvas">About</a>
-        <a class="nav-link" href="#academics" data-dismiss="offcanvas">Academics</a>
+        <a class="nav-link" href="join.html" data-dismiss="offcanvas">Join Us</a>
         <a class="nav-link" href="#events" data-dismiss="offcanvas">Announcements</a>
-        <a class="nav-link" href="#admissions" data-dismiss="offcanvas">Admissions</a>
         <a class="nav-link" href="#location" data-dismiss="offcanvas">Location</a>
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="https://psjn-lib.vercel.app/">E-Library</a></li>
@@ -1086,56 +1084,7 @@ footer a:hover { color: #fff; }
   </div>
 </section>
  
-  <!-- Academics -->
-   
-  <section id="academics" class="py-5" data-aos="zoom-in">
-     
-    <div class="container container-narrow">
-      <div class="d-flex justify-content-between align-items-end">
-        <h2 class="h3 fw-bold">Academics</h2>
-      </div>
-
-      <div class="row g-4 mt-3">
-        <div class="col-sm-6 col-lg-4">
-          <div class="card card-hover h-100">
-            <div class="ratio-4x3">
-              <img loading="lazy" src="Assets/idem_destino.jpg" alt="O level" class="w-100 h-100" style="object-fit:cover;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">O Level</h5>
-              <p class="card-text small-muted">Courses like Mathematics, Physics, Religion and others to pave the way towards greatness</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="card card-hover h-100">
-            <div class="ratio-4x3">
-              <img loading="lazy" src="Assets/carnegie (1).JPG" alt="A level" class="w-100 h-100" style="object-fit:cover;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">A level</h5>
-              <p class="card-text small-muted">Undertake  Mathematics, Physics, Chemistry and Biology to deepen our knowledge</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-          <div class="card card-hover h-100">
-            <div class="ratio-4x3">
-              <img loading="lazy" src="Assets/hildebrande.png" alt="Arts" class="w-100 h-100" style="object-fit:cover;">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Arts</h5>
-              <p class="card-text small-muted">Arts and talents including games and Music programs that foster creativity and expression through marvelous songs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-
+  
   <!-- Events & Announcements -->
   <section id="events" class="bg-light py-5">
     <div class="container container-narrow" data-aos="fade-left">
@@ -1175,69 +1124,6 @@ footer a:hover { color: #fff; }
       </div>
     </div>
   </section>
-<!-- Admissions -->
-<section id="admissions" class="py-5 bg-light">
-  <div class="container container-narrow">
-
-    <!-- Title -->
-    <div class="text-center mb-4">
-      <h2 class="h3 fw-bold" data-aos="fade-up">Admissions</h2>
-      <p class="small-muted" data-aos="fade-up">
-        Join our seminary and begin your journey of excellence and faith
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="row g-4">
-
-      <!-- Requirements -->
-      <div class="col-md-4" data-aos="fade-left">
-        <div class="card card-hover h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-file-earmark-text fs-1 text-primary mb-3"></i>
-            <h5 class="card-title">Requirements</h5>
-            <p class="small-black ">
-              To be admitted to Minor Seminary Saint John Nkumba, candidates must be Catholic and have received the 
-              sacraments of Baptism, Eucharist, and Confirmation, verified by their parish office. 
-              Candidates should also demonstrate good discipline, 
-              strong academic performance, and a sincere desire for spiritual and priestly formation.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Process -->
-      <div class="col-md-4 data-aos="fade-up">
-        <div class="card card-hover h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-list-check fs-1 text-success mb-3"></i>
-            <h5 class="card-title">Application Process</h5>
-            <p class="small-black">
-              Parents or guardians must register Catholic candidates at their parish at least two years
-              before joining Minor Seminary Saint John Nkumba. During this period, candidates
-              undergo preparation and selection assessments leading to the final entrance examination.</p>      
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-md-4" data-aos="fade-right">
-        <div class="card card-hover h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-telephone fs-1 text-warning mb-3"></i>
-            <h5 class="card-title">Contact Admissions</h5>
-            <p class="small-black">
-             For further details about enrollment and guidance, please contact our 
-              administration office. Our staff will be pleased 
-              to provide the information and support needed to guide you through the admission process.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
   
   <!-- Map -->
   <section class="bg-light py-5" id="location">
@@ -1275,9 +1161,9 @@ footer a:hover { color: #fff; }
       <div class="col-md-2">
         <h5 class="text-white fw-bold">Academics</h5>
         <ul class="list-unstyled mt-2 small">
-          <li><a href="#academics" class="text-white text-decoration-none">O Level</a></li>
-          <li><a href="#academics" class="text-white text-decoration-none">A Level</a></li>
-          <li><a href="#academics" class="text-white text-decoration-none">Arts & Music</a></li>
+          <li><a href="join.html#academics" class="text-white text-decoration-none">O Level</a></li>
+          <li><a href="join.html#academics" class="text-white text-decoration-none">A Level</a></li>
+          <li><a href="join.html#academics" class="text-white text-decoration-none">Arts & Music</a></li>
         </ul>
       </div>
 
@@ -1285,7 +1171,7 @@ footer a:hover { color: #fff; }
       <div class="col-md-3">
         <h5 class="text-white fw-bold">Admissions</h5>
         <ul class="list-unstyled mt-2 small">
-          <li><a href="#admissions" class="text-white text-decoration-none">PARISH</a></li>
+          <li><a href="join.html#admissions" class="text-white text-decoration-none">PARISH</a></li>
         </ul>
       </div>
 

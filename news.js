@@ -56,8 +56,16 @@ function buildCard(n) {
     cat.className = "news-cat";
     cat.textContent = n.category;
     meta.appendChild(cat);
-    body.appendChild(meta);
+    
   }
+    if (n.date) {
+    const date = document.createElement("span");
+    date.className = "news-date";
+    date.textContent = formatDate(n.date);
+    meta.appendChild(date);
+  }
+
+  body.appendChild(meta);
 
   const h5 = document.createElement("h5");
   h5.className = "news-title";
@@ -81,11 +89,12 @@ function buildCard(n) {
     a.rel = "noopener";
     a.textContent = "Get more";
     p.appendChild(a);
+    
   }
 
   body.appendChild(h5);
   body.appendChild(p);
-
+  
   if (shortText) {
     const more = document.createElement("button");
     more.type = "button";

@@ -1,6 +1,23 @@
 {
   "items": [
-    
+      {
+      "date": "2026-11-01",
+      "category": "Community",
+      "title": "Saint Augustin choir visit",
+      "text": "The Saint Augustin choir of INES Ruhengeri visited Petit Séminaire Saint-Jean de Nkumba, where we shared musical talents while celebrating Feast of all Saints. The visit was a great opportunity for spiritual growth and talent growth.",
+      "image": "Assets/ines.jpg",
+      "link": "https://mega.nz/folder/DqZWRYKS#8a6AaigaCpCtcDHlOoVFdg",
+      "published": true
+    }, 
+    {
+      "date": "2026-10-27",
+      "category": "Community",
+      "title": "Dean election",
+      "text": "Petit Séminaire Saint-Jean de Nkumba held an election for its Dean of Students, and students took part in choosing their representative. The newly elected Dean, IRAKOZE KAMANZI Bruce, and Vice Dean, HIRWA Prince Urbain, will represent students and work with the school administration to bring seminary to its vision. ",
+      "image": "Assets/dean.jpg",
+      "link": "https://mega.nz/folder/WjgGXIbK#IAiXBwQIfAfiZLgQvA51nQ",
+      "published": true
+    },
     {
       "date": "2026-10-24",
       "category": "Sport",
