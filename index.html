@@ -28,6 +28,15 @@
       --card-radius: .75rem;
     }
 
+ .about-panel p {
+  text-align: justify;
+  hyphens: auto;
+}
+ .events-part p {
+  text-align: justify;
+  hyphens: auto;
+ }
+
     /* statistics banner background and sizing */
     .stats-banner {
   background: #f8f9fa; /* light background instead of image */
@@ -515,6 +524,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+    @media (max-width: 991px) {
+  #academics {
+    background-attachment: scroll; /* mobile doesn’t support fixed well */
+    background-position: center center;
+  }
+}
 
 ./* ---- News carousel (home page) ---- */
 .news-marquee {
@@ -851,7 +866,8 @@ footer a:hover { color: #fff; }
     min-height: 600px;
   }
 } 
-
+/* Jump-to-section: leave room for the sticky navbar */
+section[id] { scroll-margin-top: 90px; }
 
  </style>
 </head>
@@ -877,7 +893,7 @@ footer a:hover { color: #fff; }
           <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             OUR SCHOOL</a>
           <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li><a class="dropdown-item" href="#daily-word" data-dismiss="offcanvas">Today's Meditation</a></li>
+            <li><a class="dropdown-item" href="#daily-word">Today's Meditation</a></li>
             <li><a class="dropdown-item" href="#about-us">About</a></li>
             <li><a class="dropdown-item" href="join.html">Join Us</a></li>
             <li><a class="dropdown-item" href="#events">Announcements</a></li>
@@ -912,20 +928,20 @@ footer a:hover { color: #fff; }
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <nav class="nav flex-column">
-        <a class="nav-link" href="#daily-word" data-dismiss="offcanvas">Today's Meditation</a>
-        <a class="nav-link" href="#about-us" data-dismiss="offcanvas">About</a>
-        <a class="nav-link" href="join.html" data-dismiss="offcanvas">Join Us</a>
-        <a class="nav-link" href="#events" data-dismiss="offcanvas">Announcements</a>
-        <a class="nav-link" href="#location" data-dismiss="offcanvas">Location</a>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://psjn-lib.vercel.app/">E-Library</a></li>
-        <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" href="schedule.html">schedule</a></li> -->
-        <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
-      </div>
+      <ul class="nav flex-column">
+  <li class="nav-item"><a class="nav-link" href="index.html#daily-word">Today's Meditation</a></li>
+  <li class="nav-item"><a class="nav-link" href="index.html#about-us">About</a></li>
+  <li class="nav-item"><a class="nav-link" href="join.html">Join Us</a></li>
+  <li class="nav-item"><a class="nav-link" href="index.html#events">Announcements</a></li>
+  <li class="nav-item"><a class="nav-link" href="index.html#location">Location</a></li>
+  <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+  <li class="nav-item"><a class="nav-link" href="https://psjn-lib.vercel.app/">E-Library</a></li>
+  <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+  <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+</ul>
         <hr>
-      </nav>
+      </div>
+      
     </div>
   </div>
 
@@ -986,12 +1002,10 @@ footer a:hover { color: #fff; }
          <div class="about-panel">
         <h2 class="about-title">About Us</h2>
         <p class="about-lead">Who we are and what we stand for</p>
-
-        <p>Our seminary is a centre of academic excellence and spiritual growth, preparing young Catholic men to serve in their community and church with outstanding academics, social and spiritual values.</p>
-        <p>We nurture students to discover their vocations and talents, helping them grow and positively impact the wider world.</p>
-        <p>The minor seminary emphasizes discipline, personal responsibility, prayer and community life, and acts as a bridge to the major seminary.</p>
-        <p>The curriculum combines standard high school subjects with religious education, with special focus on Latin and Music.</p>
-
+        <p>Our seminary is a centre of academic excellence and spiritual growth, dedicated to preparing seminarians to serve their community and the Church. 
+         <br>We accompany each seminarian in discerning his vocation and cultivating his gifts, nurturing discipline, personal responsibility, prayer, and community life hence acts as a bridge to the major seminary. 
+         <br>The curriculum combines standard high school subjects with religious education, with special focus on Latin and Music.</p> 
+         
        </div>
       </div>
 
@@ -1011,7 +1025,56 @@ footer a:hover { color: #fff; }
     </div>
   </div>
 </section>
-      
+  
+<!-- Academics -->
+   
+  <section id="academics" class="py-5" data-aos="zoom-in">
+     
+    <div class="container container-narrow">
+      <div class="d-flex justify-content-between align-items-end">
+        <h2 class="h3 fw-bold">Academics</h2>
+      </div>
+
+      <div class="row g-4 mt-3">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/idem_destino.jpg" alt="O level" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">O Level</h5>
+              <p class="card-text small-muted">Courses like Mathematics, Physics, Religion and others to pave the way towards greatness</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/carnegie (1).JPG" alt="A level" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">A level</h5>
+              <p class="card-text small-muted">Undertake  Mathematics, Physics, Chemistry and Biology to deepen our knowledge</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="ratio-4x3">
+              <img loading="lazy" src="Assets/hildebrande.png" alt="Arts" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Arts</h5>
+              <p class="card-text small-muted">Arts and talents including games and Music programs that foster creativity and expression through marvelous songs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
 
 <section id="board" class="py-5">
   <div class="container-fluid statouns-banner">
@@ -1092,6 +1155,7 @@ footer a:hover { color: #fff; }
         <h2 class="h2 fw-bold">Announcements</h2>
       </div>
 
+      <div class="events-part">
       <div class="row g-4 mb-5">
         <div class="col-md-6">
           <div class="bg-white text-primary rounded-3 p-4 shadow-sm h-100">
@@ -1106,7 +1170,9 @@ footer a:hover { color: #fff; }
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="events-part">   
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="h2 fw-bold mb-0">Events and updates</h2>
         <div class="news-controls" aria-label="News navigation">
@@ -1161,9 +1227,9 @@ footer a:hover { color: #fff; }
       <div class="col-md-2">
         <h5 class="text-white fw-bold">Academics</h5>
         <ul class="list-unstyled mt-2 small">
-          <li><a href="join.html#academics" class="text-white text-decoration-none">O Level</a></li>
-          <li><a href="join.html#academics" class="text-white text-decoration-none">A Level</a></li>
-          <li><a href="join.html#academics" class="text-white text-decoration-none">Arts & Music</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">O Level</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">A Level</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">Arts & Music</a></li>
         </ul>
       </div>
 
@@ -1392,10 +1458,28 @@ window.addEventListener("load", function () {
       bsOffcanvas.hide();
     }
   }
+  
 
-  window.addEventListener('resize', closeOffcanvasOnLarge);
+window.addEventListener('resize', closeOffcanvasOnLarge);
+/* Mobile menu: close the panel first, then scroll to the chosen section */
+if (offcanvasEl && bsOffcanvas) {
+  offcanvasEl.querySelectorAll('a[href]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const hash = link.hash;
+      const target = hash ? document.querySelector(hash) : null;
+      if (!target) return;
+
+      e.preventDefault();
+      bsOffcanvas.hide();
+
+      offcanvasEl.addEventListener('hidden.bs.offcanvas', function () {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', hash);
+      }, { once: true });
+    });
+  });
+}
 })();
-
 
 </script>
 <!-- Translator -->

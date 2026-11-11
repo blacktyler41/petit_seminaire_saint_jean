@@ -89,7 +89,6 @@ function renderTodayWord() {
   const titleEl    = document.getElementById("dailyTitle");
   const textEl     = document.getElementById("dailyText");
   if (!dateEl || !readingsEl || !titleEl || !textEl) return;
-
   const today = localDayKey();
   const entry = MEDITATIONS.find(m => m.date === today);
   dateEl.textContent = prettyDate(today);
@@ -126,22 +125,17 @@ function renderTodayWord() {
     });
   }
 }
-
+ 
 /* ---------- Archive page: all meditations (meditations.html) ---------- */
-function renderArchive() {
-  const listEl   = document.getElementById("archiveList");
-  const searchEl = document.getElementById("archiveSearch");
-  const emptyEl  = document.getElementById("archiveEmpty");
-  const countEl  = document.getElementById("archiveCount");
-  if (!listEl || !searchEl || !emptyEl || !countEl) return;
-
-  const entries = allMeditations();
-
-  function draw(query) {
-    const q = query.trim().toLowerCase();
-
-    const shown = entries.filter(m => {
-      if (!q) return true;
+/* to show one meditation at each page */  
+const PAGE_SIZE = 1;
+  
+/* help to search word , date title .. and turn result */
+  function filterMeditations(entries, query) {
+    const q = query.trim ().toLowerCase();
+       if (!q) return entries;
+    
+    return entries.filter(m => {
       const haystack = [
         m.title,
         m.date,
@@ -150,26 +144,104 @@ function renderArchive() {
       ].join(" ").toLowerCase();
       return haystack.includes(q);
     });
+  }
+   
+  /* show no meditation found when matches text is 0 */
+  function meditationLabel(total, page) {
+    if (total === 0) return "No meditations";
+    return `Meditation ${page} of ${total}`;
+  }
+  
+ /* get the page number from the URL query string, default to 1 if not present or invalid */
+  function  pageFromUrl() {
+    const n = parseInt(new URLSearchParams(window.location.search).get("n"), 10);
+    return Number.isFinite(n) && n > 0 ? n : 1;
+  }
+  
+  function setPageInUrl(page, { replace = false } = {}) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("n", page);
+    if (replace) {
+    history.replaceState({ page }, "", url);
+    } else {
+    history.pushState({ page }, "", url);
+    }
+  }
+/* ---------- Archive page: all meditations (meditations.html) ---------- */
+function renderArchive() {
+  const listEl   = document.getElementById("archiveList");
+  const searchEl = document.getElementById("archiveSearch");
+  const emptyEl  = document.getElementById("archiveEmpty");
+  const countEl  = document.getElementById("archiveCount");
+  const prevBtn  = document.getElementById("archivePrev");
+  const nextBtn  = document.getElementById("archiveNext");
+  if (!listEl || !searchEl || !emptyEl || !countEl || !prevBtn || !nextBtn) return;
 
-    listEl.innerHTML = shown.map(m => `
+  const entries = allMeditations();   /* all meditations, newest first */
+  let matches   = entries;            /* the ones that match the search */
+  let page      = pageFromUrl();      /* start on the number named in the address */
+
+  function showPage() {
+    const totalPages = Math.max(1, Math.ceil(matches.length / PAGE_SIZE));
+    page = Math.min(Math.max(page, 1), totalPages);
+    const start = (page - 1) * PAGE_SIZE;
+    const items = matches.slice(start, start + PAGE_SIZE);
+
+    listEl.innerHTML = items.map(m => `
       <article class="med-card">
         <div class="med-date">${prettyDate(m.date)}</div>
         <h2 class="h4 fw-bold mt-1 mb-3">${escapeHtml(m.title)}</h2>
         <div class="med-refs">
           ${m.readings.map(r => `
-            <a href="${r.link}" target="_blank" rel="noopener noreferrer">${r.label}: ${r.ref}</a>`).join("")}
+            <a href="${r.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.label)}: ${escapeHtml(r.ref)}</a>`).join("")}
         </div>
         ${m.meditation.map(line => `<p>${escapeHtml(line)}</p>`).join("")}
       </article>`).join("");
 
-    emptyEl.classList.toggle("d-none", shown.length > 0);
-    countEl.textContent = `${shown.length} of ${entries.length} meditation${entries.length === 1 ? "" : "s"}`;
+    countEl.textContent = meditationLabel(matches.length, page);   /* "Meditation 3 of 10" */
+    emptyEl.hidden = matches.length > 0;
+    prevBtn.disabled = page <= 1;
+    nextBtn.disabled = page >= totalPages;
   }
 
-  searchEl.addEventListener("input", () => draw(searchEl.value));
-  draw("");
+  function goTo(newPage) {
+    page = newPage;
+    showPage();
+    setPageInUrl(page);   /* no scrolling here */
+  }
+
+  prevBtn.addEventListener("click", () => goTo(page - 1));
+  nextBtn.addEventListener("click", () => goTo(page + 1));
+
+  searchEl.addEventListener("input", () => {
+    matches = filterMeditations(entries, searchEl.value);
+    page = 1;
+    showPage();
+    setPageInUrl(page, { replace: true });
+  });
+
+  window.addEventListener("popstate", () => {
+    page = pageFromUrl();
+    showPage();
+  });
+
+  showPage();
 }
 
+/* Shows the "Back to top" button after the visitor scrolls down, and scrolls to the top when it is clicked */
+function setupBackToTop() {
+  const button = document.getElementById("backToTop");
+  if (!button) return;
+
+  const update = () => button.classList.toggle("is-visible", window.scrollY > 300);
+
+  window.addEventListener("scroll", update, { passive: true });
+  button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  update();
+}
+
+  
+  
 /* ---------- Start: load the JSON first, then fill the pages ---------- */
 onReady(async () => {
   try {
@@ -183,4 +255,5 @@ onReady(async () => {
 
   renderTodayWord();
   renderArchive();
+  setupBackToTop();
 });

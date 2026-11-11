@@ -4,7 +4,7 @@
   <meta charset="utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <title>News archive - Petit Seminaire Saint-Jean Nkumba</title> 
-  <meta name="description" content="All news of Petit Seminaire Saint-Jean Nkumba, by year." /> 
+  <meta name="description" content="All meditations of Petit Seminaire Saint-Jean Nkumba." /> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" /> 
     <div class="gtranslate_wrapper"></div> 
   <style> 
@@ -69,17 +69,18 @@
         padding-block: 2rem !important;
       }
 
-      .news-grid.row {
-        --bs-gutter-x: 1rem;
-        --bs-gutter-y: 1rem;
-      }
-
-      .news-card {
-        min-height: 0;
-        padding: 0.875rem;
-      }
+    
     }
-
+#backToTop {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  display: none;
+}
+#backToTop.is-visible {
+  display: inline-block;
+}
      /* Footer */
 footer {
   background: radial-gradient(circle at top left, #0d47a1, #08306b);
@@ -158,10 +159,15 @@ footer .row > div {
              placeholder="Search by title, reading or word…" aria-label="Search meditations" />
       <span id="archiveCount" class="small text-muted"></span>
     </div>
- 
+ <div class="d-flex align-items-center justify-content-end gap-3 mt-4" aria-label="Meditation pages">
+  <span id="archiveCount" class="small text-muted"></span>
+  <button type="button" id="archivePrev" class="btn btn-light btn-sm px-3" aria-label="Previous meditation">&lsaquo;</button>
+  <button type="button" id="archiveNext" class="btn btn-light btn-sm px-3" aria-label="Next meditation">&rsaquo;</button>
+</div>
     <div id="archiveList"></div>
     <p id="archiveEmpty" class="text-center text-muted d-none">No meditations match your search.</p>
  
+    
   </main>
   </body>
    
@@ -184,9 +190,9 @@ footer .row > div {
       <div class="col-md-2">
         <h5 class="text-white fw-bold">Academics</h5>
         <ul class="list-unstyled mt-2 small">
-          <li><a href="join.html#academics" class="text-white text-decoration-none">O Level</a></li>
-          <li><a href="join.html#academics" class="text-white text-decoration-none">A Level</a></li>
-          <li><a href="join.html#academics" class="text-white text-decoration-none">Arts & Music</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">O Level</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">A Level</a></li>
+          <li><a href="index.html#academics" class="text-white text-decoration-none">Arts & Music</a></li>
         </ul>
       </div>
 

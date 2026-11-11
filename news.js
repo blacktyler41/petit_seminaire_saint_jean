@@ -1,11 +1,12 @@
 const NEWS_URL = "data/news.json";
 const NEWS_LIMIT = 8;
 const NEWS_ARCHIVE_URL = "news.html";
-const NEWS_PAGE_SIZE = 12;
+const NEWS_HOME_PAGE_SIZE = 4;
+const NEWS_ARCHIVE_PAGE_SIZE = 12;
 const NEWS_BOX_ID = "news-list";
 const NEWS_ARCHIVE_ID = "news-archive";
 const NEWS_CACHE_KEY = "pssj_news_cache";
-const NEWS_EXCERPT_CHARS = 75;   
+const NEWS_EXCERPT_CHARS = 75;  
 
 function isSafeLink(u) {
   return /^https?:\/\//i.test(u);
