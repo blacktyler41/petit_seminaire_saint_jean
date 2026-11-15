@@ -1,5 +1,14 @@
 {
   "items": [
+  {
+      "date": "2026-11-15",
+      "category": "Community",
+      "title": "Third visiting sunday in first term",
+      "text": "On 15th November 2026, the third Visiting Sunday of the academic year 2026-2027 was held at PSSJ Nkumba. Parents and guardians visited their seminarians to see their progress and encourage them to succed in their coming exams.",
+      "image": "Assets/Designer.png",
+      "link": " ",
+      "published": true
+    },   
     {
       "date": "2026-11-09",
       "category": "Community",
