@@ -1,4 +1,31 @@
-[
+[{
+    "date": "2026-11-18",
+    "title": " Dedication of the Basilicas of Saints Peter and Paul, Apostles",
+    "readings": [
+      
+      {
+        "label": "First Reading",
+        "ref": "Revelation 4:1-11",
+        "link": "https://bible.usccb.org/bible/readings/111826.cfm"
+      },
+      {
+        "label": "Responsorial Psalm",
+        "ref": "Psalm 150:1b-2, 3-4, 5-6",
+        "link": "https://bible.usccb.org/bible/readings/111826.cfm"
+      },
+     
+      {
+        "label": "Gospel",
+        "ref": "Luke 19:11-28",
+        "link": "https://bible.usccb.org/bible/readings/111826.cfm"
+      }
+    ],
+    "meditation": [
+    "The parable Jesus tells today reflects this divine reality. The nobleman who travels to a distant country to receive a kingship and later returns symbolizes Jesus Himself, who would soon depart this world through His Passion and Ascension, only to return in visible and permanent glory. The servants who are entrusted with coins represent all of us who are called to live by faith during His apparent absence. They are expected to invest, multiply, and bear fruit with what they have received, not sit idle in fear or spiritual complacency.",
+     "Jesus, knowing what lay ahead, sought to correct the false assumptions of the crowd. His Kingdom would not come with spectacle or worldly power. It would begin humbly, like a seed hidden in the soil. And it would grow through the fidelity of those who believe, invest their gifts, and remain vigilant for His return."
+  ]
+
+  },
   
   {
     "date": "2026-11-13",
