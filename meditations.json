@@ -1,6 +1,39 @@
 
 [
-  {
+  { 
+    "date": "2026-11-23",
+    "title": "Monday of the Thirty-fourth Week in Ordinary Time",
+    "readings": [
+      
+      {
+        "label": "First Reading",
+        "ref": "Revelation 14:1-3, 4b-5",
+        "link": "https://bible.usccb.org/bible/readings/112326.cfm"
+      },
+      {
+        "label": "Responsorial Psalm",
+        "ref": "Psalm 24:1bc-2, 3-4ab, 5-6",
+        "link": "https://bible.usccb.org/bible/readings/112326.cfm"
+      },
+     
+      {
+        "label": "Gospel",
+        "ref": "Luke 21:1-4",
+        "link": "https://bible.usccb.org/bible/readings/112326.cfm"
+      }
+    ],
+    "meditation": [
+      "In today’s Gospel, Jesus quietly observes people placing their offerings into the Temple treasury. Some wealthy individuals contribute large sums. But it is a poor widow, placing two small coins into one of the Temple’s collection chests, who captures His gaze and His praise. Her offering was small in quantity, yet great in quality: “She, from her poverty, has offered her whole livelihood.”",
+"Her act reveals the very heart of generosity and surrender to God. She did not give what she could spare; she gave everything. In her total gift, she foreshadows the perfect sacrifice of Christ, who would soon offer not something, but everything for our salvation.",
+"The timing of this event is significant. It takes place just before Jesus begins His own self-offering on the Cross. In this widow’s act, God offers us a powerful image of the disposition He desires in each of us. He does not merely want a portion of our resources, our time, or our talents. He wants everything. Why? Because everything we have has already come from Him and finds its proper end in Him.",
+"This truth is especially challenging for those who have much. When we are emotionally attached to our possessions, accomplishments, status, comforts, or even our relationships, we are often reluctant to surrender them to God’s providence. Yet our clinging becomes a spiritual burden, preventing us from making a total gift of ourselves. “Whoever does not renounce all that he has cannot be my disciple” (Luke 14:33).",
+"So, what do you treasure most in this life: family, friendships, career, financial security, home, health, or personal interests? While all these can be genuine goods—especially family—they must always be held in the light of Christ’s own self-emptying love. The measure of our attachment must be the Cross.",
+"Jesus loved His family, His friends, His disciples. He no doubt experienced the joy of life, of shared meals and simple pleasures. Yet He was never so attached to anything earthly that it could dissuade Him from the will of the Father to give all on the Cross. The widow, in her humble gesture, becomes a mirror of His divine generosity.",
+"She is also a model for us. Her gift foreshadows the new and eternal Temple, the Mystical Body of Christ. When we, like her, offer everything to God—our relationships, time, wealth, joys, sorrows, and even our suffering—those gifts become part of the spiritual treasury that supports and builds up the Body of Christ. In this way, we not only imitate Christ, we participate in His redemptive work.",
+"Reflect today on what you are holding back. What do you cling to emotionally, spiritually, or practically? Ask the Lord for the grace to release it and to place it in the Father’s hands. Trust that no gift, however small or large, is ever lost when offered in love. Through such generosity, God builds up the new Temple—His Church—and makes our hearts a dwelling place for His glory."
+ ]
+  },
+  { 
     "date": "2026-11-22",
     "title": "The Solemnity of Our Lord Jesus Christ, King of the Universe",
     "readings": [
@@ -34,7 +67,7 @@
 "Happy Solemnity of Jesus Christ, King of the Universe!"
     ]
   },
-  {
+  { 
     "date": "2026-11-21",
     "title": "Memorial of the Presentation of the Virgin Mary",
     "readings": [
@@ -257,33 +290,7 @@
     ]
 
   },
-  {
-    "date": "2026-11-11",
-    "title": " Memorial of martyrdom of Saint Josaphat",
-    "readings": [
-      
-      {
-        "label": "First Reading",
-        "ref": "2 John 4-9",
-        "link": "https://bible.usccb.org/bible/readings/111326.cfm"
-      },
-      {
-        "label": "Responsorial Psalm",
-        "ref": "Psalm 119:1, 2, 10, 11, 17, 18",
-        "link": "https://bible.usccb.org/bible/readings/111326.cfm"
-      },
-     
-      {
-        "label": "Gospel",
-        "ref": "Luke 17:26-37",
-        "link": "https://bible.usccb.org/bible/readings/111326.cfm"
-      }
-    ],
-    "meditation": [
-    "Beloved, today we are celebrating the martyrdom of Saint Josaphat, the testimony of faith. The readings that we are given lead us to three main points especially in the gospel, Jesus tells us to be aware of the day of the coming for none knows the day and hour. Nevertheless, waiting for this day there are some attitudes that are requested as we get it from address to Philemon to be a resilient person in the belief of change. The former thief and slave Onesm became a child because of acceptation of Jesus in his imprisonment. Otherwise, we all have a debt to pay as Paul reminded Philemon that we all live all by favor and reconcile with our fellows who are mistaken."
-    ]
-
-  },
+ 
   {
     "date": "2026-11-11",
     "title": " Memorial of Saint Martin of Tours, Bishop",
