@@ -1,6 +1,15 @@
 {
  "items": [
-   
+ 
+   {
+      "date": "2026-11-25",
+      "category": "Academics",
+      "title": "Start of first term academic year examinations",
+      "text": "Petit Séminaire Saint-Jean Nkumba official started first-term examinations on this Wednesday, 25 November 2026. The examination period runs until 11 December 2026.",
+      "image": "Assets/combined_seminary_photo_side_by_side.jpg",
+      "link": "",
+      "published": true
+    },   
   {
       "date": "2026-11-15",
       "category": "Community",
